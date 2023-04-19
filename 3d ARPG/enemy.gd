@@ -13,15 +13,20 @@ var gravity : float = 15.0
 # vectors
 var vel : Vector3 = Vector3()
 var dir
+var dist
 #timers
 @onready var timer = get_node("Timer")
 @onready var deathTimer = get_node("DeathTimer")
+
 # components
 var player
 var is_on_ground = false
 
+var stunned = false
 var damaged = false
 var dying = false
+var knockbackPending = false
+var knockbackValue = 0
 
 var bodyCollision
 
@@ -54,15 +59,15 @@ func _on_timer_timeout():
 		player.take_damage(damage)
 		enemy_attack_animation_player.stop(true)
 		enemy_attack_animation_player.play("Attack")
-	if damaged == true:
-		damaged = false
+	if stunned == true:
+		stunned = false
 		print('missed attack because player hit enemy')
 
 # called 60 times a second
 func _physics_process (delta):
 	if dying != true:
 		# get the distance from us to the player
-		var dist = global_transform.origin.distance_to(player.global_transform.origin)
+		dist = global_transform.origin.distance_to(player.global_transform.origin)
 		# calculate the direction between us and the player
 		dir = (player.global_transform.origin - global_transform.origin).normalized()	
 		vel.x = dir.x
@@ -75,13 +80,24 @@ func _physics_process (delta):
 			move_and_collide(vel * delta)
 		else :
 			enemy_walk_animation_player.stop(true)
-			# rotate to face the direction of movement
+
+		# rotate to face the direction of movement
 		look_at(global_transform.origin + vel, Vector3.UP)
+	if knockbackPending == true:
+			if knockbackValue > 0:
+				knockbackValue -= 1
+				move_and_collide((-vel * delta) * knockbackValue)
+			else:
+				knockbackPending = false
 
 # called when the player deals damage to us
 func take_damage (damageToTake):
 	enemy_hit_animation_player.stop(true)
 	enemy_attack_animation_player.stop(true)
+	if knockbackPending == false:
+		stunned = true
+		knockbackPending = true
+		knockbackValue = 13
 	
 	if damaged == true && dying != true && hatEquipped == true:
 		enemy_hit_animation_player.play("Hit_2")
@@ -90,6 +106,7 @@ func take_damage (damageToTake):
 	elif damaged == false && dying != true:
 		enemy_hit_animation_player.play("Hit")
 		damaged = true
+	
 	
 	curHp -= damageToTake
 	print('enemy damaged')
