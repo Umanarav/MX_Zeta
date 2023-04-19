@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://05arr6ihujft"
+path="res://.godot/imported/TreeStump.obj-1ffdffd71aa51c57e09628aae45d5aac.mesh"
+
+[deps]
+
+files=["res://.godot/imported/TreeStump.obj-1ffdffd71aa51c57e09628aae45d5aac.mesh"]
+
+source_file="res://OBJ/TreeStump.obj"
+dest_files=["res://.godot/imported/TreeStump.obj-1ffdffd71aa51c57e09628aae45d5aac.mesh", "res://.godot/imported/TreeStump.obj-1ffdffd71aa51c57e09628aae45d5aac.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

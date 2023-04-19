@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://p17fqxsctnbp"
+path="res://.godot/imported/wooden watch tower2.obj-7a820fd3b6e8c504de68536704355829.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wooden watch tower2.obj-7a820fd3b6e8c504de68536704355829.mesh"]
+
+source_file="res://Models/Environment/obj/wooden watch tower2.obj"
+dest_files=["res://.godot/imported/wooden watch tower2.obj-7a820fd3b6e8c504de68536704355829.mesh", "res://.godot/imported/wooden watch tower2.obj-7a820fd3b6e8c504de68536704355829.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

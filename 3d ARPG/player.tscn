@@ -1,0 +1,841 @@
+[gd_scene load_steps=47 format=3 uid="uid://bxp2dofewepxm"]
+
+[ext_resource type="Script" path="res://CameraOrbit.gd" id="1_2awhq"]
+[ext_resource type="Script" path="res://player.gd" id="1_ekj0j"]
+[ext_resource type="PackedScene" uid="uid://bhw5l7nva470h" path="res://Models/Sword.dae" id="1_w84h2"]
+[ext_resource type="Material" uid="uid://hl3klct213c0" path="res://MX-02-DarkRed.tres" id="2_awe22"]
+[ext_resource type="Material" uid="uid://cfy8hrhvb4ts2" path="res://MX-02-Pink.tres" id="2_bg0d2"]
+[ext_resource type="Material" uid="uid://d3pjijyw1q35v" path="res://MX-02-Red.tres" id="3_44et7"]
+[ext_resource type="PackedScene" uid="uid://c1vbyjper7af3" path="res://ui.tscn" id="4_rayas"]
+[ext_resource type="Material" uid="uid://cdjvonbh4mb08" path="res://MX-02-Black.tres" id="5_3dj5t"]
+[ext_resource type="Script" path="res://ui.gd" id="5_6rsyh"]
+[ext_resource type="Texture2D" uid="uid://b7adi7xu2pg5x" path="res://Models/art/Mx-01.png" id="6_m0c8h"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wii2b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8jca"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ye2pw"]
+material = SubResource("StandardMaterial3D_c8jca")
+
+[sub_resource type="BoxMesh" id="BoxMesh_oomsx"]
+material = ExtResource("2_bg0d2")
+
+[sub_resource type="BoxMesh" id="BoxMesh_5id21"]
+material = ExtResource("3_44et7")
+
+[sub_resource type="BoxMesh" id="BoxMesh_7s73g"]
+material = ExtResource("2_awe22")
+
+[sub_resource type="BoxMesh" id="BoxMesh_qnhvw"]
+material = ExtResource("5_3dj5t")
+
+[sub_resource type="BoxMesh" id="BoxMesh_814y8"]
+material = ExtResource("2_awe22")
+
+[sub_resource type="BoxMesh" id="BoxMesh_y0nu4"]
+material = ExtResource("2_awe22")
+
+[sub_resource type="BoxMesh" id="BoxMesh_y84by"]
+material = ExtResource("2_awe22")
+
+[sub_resource type="BoxMesh" id="BoxMesh_5yd4u"]
+material = ExtResource("2_bg0d2")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2uwpb"]
+material = ExtResource("3_44et7")
+
+[sub_resource type="BoxMesh" id="BoxMesh_etk0q"]
+material = ExtResource("2_awe22")
+
+[sub_resource type="BoxMesh" id="BoxMesh_qixhb"]
+material = ExtResource("3_44et7")
+
+[sub_resource type="BoxMesh" id="BoxMesh_wlt6a"]
+material = ExtResource("3_44et7")
+
+[sub_resource type="BoxMesh" id="BoxMesh_b51el"]
+material = ExtResource("2_awe22")
+
+[sub_resource type="SphereMesh" id="SphereMesh_17slx"]
+material = ExtResource("3_44et7")
+
+[sub_resource type="SphereMesh" id="SphereMesh_ya4xr"]
+material = ExtResource("3_44et7")
+
+[sub_resource type="SphereMesh" id="SphereMesh_ann8d"]
+material = ExtResource("2_awe22")
+
+[sub_resource type="SphereMesh" id="SphereMesh_mm2ot"]
+material = ExtResource("2_bg0d2")
+
+[sub_resource type="Animation" id="Animation_lskj0"]
+resource_name = "jump"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../shoe1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.2, 0.4, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(2.08165e-12, -0.1, 2.08165e-12), Vector3(2.08165e-12, 0.1, 2.08165e-12), Vector3(6.93882e-13, 0.0333333, 6.93882e-13), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../shoe2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.2, 0.4, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(2.08165e-12, -0.1, 2.08165e-12), Vector3(2.08165e-12, 0.1, 2.08165e-12), Vector3(6.93882e-13, 0.0333333, 6.93882e-13), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../main:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(3.48787e-16, 6.28319, 3.48787e-16)]
+}
+
+[sub_resource type="Animation" id="Animation_jgkd5"]
+resource_name = "jump_2"
+
+[sub_resource type="Animation" id="Animation_aso31"]
+resource_name = "jump_3"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../shoe1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.2, 0.4, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(2.08165e-12, -0.1, 2.08165e-12), Vector3(2.08165e-12, 0.1, 2.08165e-12), Vector3(6.93882e-13, 0.0333333, 6.93882e-13), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../shoe2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.2, 0.4, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(2.08165e-12, -0.1, 2.08165e-12), Vector3(2.08165e-12, 0.1, 2.08165e-12), Vector3(6.93882e-13, 0.0333333, 6.93882e-13), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../main:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(3.48787e-16, -6.28319, 3.48787e-16)]
+}
+
+[sub_resource type="Animation" id="Animation_p2vws"]
+resource_name = "jump_4"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../shoe1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.2, 0.4, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(2.08165e-12, -0.1, 2.08165e-12), Vector3(2.08165e-12, 0.1, 2.08165e-12), Vector3(6.93882e-13, 0.0333333, 6.93882e-13), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../shoe2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.2, 0.4, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(2.08165e-12, -0.1, 2.08165e-12), Vector3(2.08165e-12, 0.1, 2.08165e-12), Vector3(6.93882e-13, 0.0333333, 6.93882e-13), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../main:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(6.28319, 3.48787e-16, 3.48787e-16)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../main:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4995, 0.999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.002, 0.75, 2.08165e-12), Vector3(0.002, 1.68, 2.08165e-12), Vector3(0.00197044, 0.688523, 9.95031e-13)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8wer0"]
+_data = {
+"jump": SubResource("Animation_lskj0"),
+"jump_2": SubResource("Animation_jgkd5"),
+"jump_3": SubResource("Animation_aso31"),
+"jump_4": SubResource("Animation_p2vws")
+}
+
+[sub_resource type="Animation" id="Animation_ebyi8"]
+resource_name = "idle"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../main:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.00197044, 0.688523, 9.95031e-13), Vector3(0.002, 0.73, 2.08165e-12), Vector3(0.00197044, 0.688523, 9.95031e-13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../main/head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.15125, 7, -2.08165e-12), Vector3(-1.151, 7.4, 2.08165e-12), Vector3(-1.15125, 7, -2.08165e-12)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../shoe1/feetBalls:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.13, 0.13, 0.13), Vector3(0.14, 0.14, 0.14), Vector3(0.13, 0.13, 0.13)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../shoe2/feetBalls:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.13, 0.13, 0.13), Vector3(0.14, 0.14, 0.14), Vector3(0.13, 0.13, 0.13)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u0kau"]
+_data = {
+"idle": SubResource("Animation_ebyi8")
+}
+
+[sub_resource type="Animation" id="Animation_an465"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.5, 0.6, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-1.5708, 3.48787e-16, 3.48787e-16), Vector3(0.0872665, 3.48787e-16, 3.48787e-16), Vector3(-0.0523599, 3.48787e-16, 3.48787e-16), Vector3(0.0349066, 3.48787e-16, 3.48787e-16), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ua44m"]
+_data = {
+"hit": SubResource("Animation_an465")
+}
+
+[sub_resource type="Animation" id="Animation_gl6xv"]
+resource_name = "walk_cycle"
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("shoe1/feetBalls:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.48787e-16, 3.48787e-16, 3.48787e-16), Vector3(6.28319, 3.48787e-16, 3.48787e-16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shoe2/feetBalls:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.48787e-16, 3.48787e-16, 3.48787e-16), Vector3(-6.28319, 3.48787e-16, 3.48787e-16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("main:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.00195074, 0.747538, 2.70614e-13), Vector3(0.002, 0.6, 2.08165e-12), Vector3(0.00195074, 0.747538, 2.70614e-13)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("shoe2/front2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.797342, 0.130366, 6.97038e-08), Vector3(0.777, 0.13, 2.08165e-12), Vector3(0.797342, 0.130366, 6.97038e-08)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("shoe2/back2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.5, 0.766667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.02, 2.08165e-12, 2.08165e-12), Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12), Vector3(-0.02, 2.08165e-12, 2.08165e-12), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("shoe1/front:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.797342, 0.130366, 2.08165e-12), Vector3(-0.817, 0.13, 2.08165e-12), Vector3(-0.797342, 0.130366, 2.08165e-12)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("shoe1/back:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.5, 0.766667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.02, 2.08165e-12, 2.08165e-12), Vector3(0, 0, 0), Vector3(-0.02, 2.08165e-12, 2.08165e-12), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ivvf"]
+_data = {
+"walk_cycle": SubResource("Animation_gl6xv")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6bptw"]
+radius = 0.526575
+height = 2.10325
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fgxyq"]
+radius = 0.189324
+height = 0.695712
+
+[sub_resource type="Animation" id="Animation_0tsmc"]
+resource_name = "Attack"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(3.48787e-16, 3.48787e-16, 3.48787e-16), Vector3(-1.55334, 0.0872665, 0.139626), Vector3(0.226893, 0.226893, 0.366519), Vector3(0.567232, 0.366519, 0.593412), Vector3(0.350811, 0.226893, 0.366519), Vector3(-0.13439, 0.0523599, 0.0872665)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.58, 1, 0.035), Vector3(-0.58, 1, -0.025), Vector3(-0.58, 1, 0.035), Vector3(-0.58, 1, 0.035)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Body/main/leftArm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0999, 0.999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(3.48787e-16, 3.48787e-16, 3.48787e-16), Vector3(2.07694, 3.48787e-16, -0.0523599), Vector3(3.48787e-16, 3.48787e-16, 3.48787e-16)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Body/main/leftArm/armSeg3Hand2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.493122, 2.53362, 2.08128e-12), Vector3(0.493, 10, 2.08165e-12), Vector3(0.493122, 2.53362, 2.08128e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_j5u8o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n2i5u"]
+_data = {
+"Attack": SubResource("Animation_0tsmc"),
+"RESET": SubResource("Animation_j5u8o")
+}
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_ekj0j")
+
+[node name="Body" type="Node3D" parent="."]
+transform = Transform3D(1, -3.48787e-16, 1.74846e-07, 3.48787e-16, 1, -3.48787e-16, -1.74846e-07, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="CapsuleShape" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
+visible = false
+mesh = SubResource("CapsuleMesh_wii2b")
+skeleton = NodePath("../..")
+
+[node name="main" type="Node3D" parent="Body"]
+transform = Transform3D(0.52, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0.00197044, 0.688523, 9.95031e-13)
+
+[node name="head" type="Node3D" parent="Body/main"]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 1, -1.15125, 7, -2.08165e-12)
+
+[node name="dome" type="MeshInstance3D" parent="Body/main/head"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.59865, 1.55613, 2.08165e-12)
+mesh = SubResource("BoxMesh_ye2pw")
+skeleton = NodePath("../../..")
+
+[node name="ear1" type="MeshInstance3D" parent="Body/main/head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.07632, 1.02045, 2.08165e-12)
+mesh = SubResource("BoxMesh_oomsx")
+skeleton = NodePath("../../..")
+
+[node name="ear2" type="MeshInstance3D" parent="Body/main/head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10442, 1.02045, 2.08165e-12)
+mesh = SubResource("BoxMesh_oomsx")
+skeleton = NodePath("../../..")
+
+[node name="mouth" type="MeshInstance3D" parent="Body/main/head"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 4.60471, 0, 2.08165e-12)
+mesh = SubResource("BoxMesh_5id21")
+skeleton = NodePath("../../..")
+
+[node name="chest1" type="MeshInstance3D" parent="Body/main/head"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 4.605, -1, 2.08165e-12)
+mesh = SubResource("BoxMesh_7s73g")
+skeleton = NodePath("../../..")
+
+[node name="chest2" type="MeshInstance3D" parent="Body/main/head"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 4.605, -2, 2.08165e-12)
+mesh = SubResource("BoxMesh_qnhvw")
+skeleton = NodePath("../../..")
+
+[node name="leftArm" type="Node3D" parent="Body/main"]
+transform = Transform3D(0.25, -3.48787e-16, 3.48787e-16, 8.71968e-17, 1, -3.48787e-16, -8.71968e-17, 3.48787e-16, 1, -1.01607, 6.45713, -2.08165e-12)
+
+[node name="armSeg2" type="MeshInstance3D" parent="Body/main/leftArm"]
+transform = Transform3D(1, -3.83532e-23, -9.44119e-24, -9.44119e-24, 1, 9.44119e-24, -3.83532e-23, 3.83532e-23, 1, -1.50688, 1.53362, 2.08128e-12)
+mesh = SubResource("BoxMesh_814y8")
+skeleton = NodePath("../../..")
+
+[node name="armSeg1" type="MeshInstance3D" parent="Body/main/leftArm"]
+transform = Transform3D(1, -3.83532e-23, -9.44119e-24, -9.44119e-24, 1, 9.44119e-24, -3.83532e-23, 3.83532e-23, 1, -0.506878, 0.533618, 2.08128e-12)
+mesh = SubResource("BoxMesh_5id21")
+skeleton = NodePath("../../..")
+
+[node name="armSeg3Hand2" type="MeshInstance3D" parent="Body/main/leftArm"]
+transform = Transform3D(1, -3.83532e-23, -9.44119e-24, -9.44119e-24, 1, 9.44119e-24, -3.83532e-23, 3.83532e-23, 1, 0.493122, 2.53362, 2.08128e-12)
+mesh = SubResource("BoxMesh_ye2pw")
+skeleton = NodePath("../../..")
+
+[node name="rightArm" type="Node3D" parent="Body/main"]
+transform = Transform3D(-0.25, 8.71967e-17, -2.18557e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 1.14409, 7, -2.08165e-12)
+
+[node name="armSeg2" type="MeshInstance3D" parent="Body/main/rightArm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 2.08165e-12)
+mesh = SubResource("BoxMesh_814y8")
+skeleton = NodePath("../../..")
+
+[node name="armSeg3Hand" type="MeshInstance3D" parent="Body/main/rightArm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 2.08165e-12)
+mesh = SubResource("BoxMesh_ye2pw")
+skeleton = NodePath("../../..")
+
+[node name="armSeg1" type="MeshInstance3D" parent="Body/main/rightArm"]
+transform = Transform3D(1, -1.79417e-23, 4.62773e-15, -1.24045e-23, 1, 1.05e-23, -5.05786e-15, 1.18835e-23, 1, 0, 0, 2.07478e-12)
+mesh = SubResource("BoxMesh_5id21")
+skeleton = NodePath("../../..")
+
+[node name="leftShoulder" type="Node3D" parent="Body/main"]
+transform = Transform3D(1.92308, 0, 0, 0, 7.69231, 0, 0, 0, 7.69231, -0.00375143, -5.75029, -2.08165e-12)
+
+[node name="shoulder1" type="MeshInstance3D" parent="Body/main/leftShoulder"]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -0.466699, 1.52442, 2.70614e-13)
+mesh = SubResource("BoxMesh_ye2pw")
+skeleton = NodePath("../../..")
+
+[node name="shoulder2" type="MeshInstance3D" parent="Body/main/leftShoulder"]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -0.332, 1.524, 2.08165e-12)
+mesh = SubResource("BoxMesh_y0nu4")
+skeleton = NodePath("../../..")
+
+[node name="shoulder 3" type="MeshInstance3D" parent="Body/main/leftShoulder"]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -0.2, 1.524, 2.08165e-12)
+mesh = SubResource("BoxMesh_oomsx")
+skeleton = NodePath("../../..")
+
+[node name="shoulder4" type="MeshInstance3D" parent="Body/main/leftShoulder"]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -0.466091, 1.39418, 2.70614e-13)
+mesh = SubResource("BoxMesh_y84by")
+skeleton = NodePath("../../..")
+
+[node name="shoulder 5" type="MeshInstance3D" parent="Body/main/leftShoulder"]
+transform = Transform3D(0.26, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -0.265, 1.394, 2.08165e-12)
+mesh = SubResource("BoxMesh_oomsx")
+skeleton = NodePath("../../..")
+
+[node name="rightShoulder2" type="Node3D" parent="Body/main"]
+transform = Transform3D(-1.92308, 6.70744e-16, -1.68121e-07, 2.68298e-15, 7.69231, -2.68298e-15, 6.72483e-07, -2.68298e-15, -7.69231, -0.00375143, -5.75029, -2.08165e-12)
+
+[node name="shoulder1" type="MeshInstance3D" parent="Body/main/rightShoulder2"]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -0.466699, 1.52442, 2.70614e-13)
+mesh = SubResource("BoxMesh_ye2pw")
+skeleton = NodePath("../../..")
+
+[node name="shoulder2" type="MeshInstance3D" parent="Body/main/rightShoulder2"]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -0.332, 1.524, 2.08165e-12)
+mesh = SubResource("BoxMesh_y0nu4")
+skeleton = NodePath("../../..")
+
+[node name="shoulder 3" type="MeshInstance3D" parent="Body/main/rightShoulder2"]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -0.2, 1.524, 2.08165e-12)
+mesh = SubResource("BoxMesh_oomsx")
+skeleton = NodePath("../../..")
+
+[node name="shoulder4" type="MeshInstance3D" parent="Body/main/rightShoulder2"]
+transform = Transform3D(0.13, -6.55227e-25, -9.46136e-18, -1.50671e-24, 0.13, 1.11618e-24, 0, 0, 0.13, -0.459902, 1.39418, 5.41345e-10)
+mesh = SubResource("BoxMesh_y84by")
+skeleton = NodePath("../../..")
+
+[node name="shoulder 5" type="MeshInstance3D" parent="Body/main/rightShoulder2"]
+transform = Transform3D(0.26, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -0.265, 1.394, 2.08165e-12)
+mesh = SubResource("BoxMesh_oomsx")
+skeleton = NodePath("../../..")
+
+[node name="centerBody" type="Node3D" parent="Body/main"]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 1, -1.15125, 7, -2.08165e-12)
+
+[node name="ab2" type="MeshInstance3D" parent="Body/main/centerBody"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 4.605, -5, 2.08165e-12)
+mesh = SubResource("BoxMesh_qnhvw")
+skeleton = NodePath("../../..")
+
+[node name="ribs" type="MeshInstance3D" parent="Body/main/centerBody"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 4.605, -3.02021, 2.08165e-12)
+mesh = SubResource("BoxMesh_5yd4u")
+skeleton = NodePath("../../..")
+
+[node name="ab1" type="MeshInstance3D" parent="Body/main/centerBody"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 4.605, -4, 2.08165e-12)
+mesh = SubResource("BoxMesh_2uwpb")
+skeleton = NodePath("../../..")
+
+[node name="ab3" type="MeshInstance3D" parent="Body/main/centerBody"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 4.605, -6, 2.08165e-12)
+mesh = SubResource("BoxMesh_etk0q")
+skeleton = NodePath("../../..")
+
+[node name="bottomBody" type="Node3D" parent="Body/main"]
+
+[node name="1" type="MeshInstance3D" parent="Body/main/bottomBody"]
+mesh = SubResource("BoxMesh_qixhb")
+skeleton = NodePath("../../..")
+
+[node name="2" type="MeshInstance3D" parent="Body/main/bottomBody"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.125, 2.08165e-12)
+mesh = SubResource("BoxMesh_wlt6a")
+skeleton = NodePath("../../..")
+
+[node name="3" type="MeshInstance3D" parent="Body/main/bottomBody"]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.125, 2.08165e-12)
+mesh = SubResource("BoxMesh_qixhb")
+skeleton = NodePath("../../..")
+
+[node name="BlackProtrudance" type="Node3D" parent="Body/main/bottomBody"]
+transform = Transform3D(1, 3.8795e-23, 4.13937e-14, -6.14716e-23, 1, -9.53791e-23, -2.59091e-13, 1.08654e-23, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="protrudance" type="MeshInstance3D" parent="Body/main/bottomBody/BlackProtrudance"]
+transform = Transform3D(0.5, 1.74391e-24, -1.38096e-15, 2.43214e-23, 2, 1.15588e-23, 8.19028e-15, 2.17308e-23, 1, 0, -1.6561, -1)
+mesh = SubResource("BoxMesh_qnhvw")
+skeleton = NodePath("../../../..")
+
+[node name="protrudance2" type="MeshInstance3D" parent="Body/main/bottomBody/BlackProtrudance"]
+transform = Transform3D(0.5, 1.74391e-24, -1.38096e-15, 2.43214e-23, 2, 1.15588e-23, 8.19028e-15, 2.17308e-23, 1, 2.32831e-10, -1.656, 1)
+mesh = SubResource("BoxMesh_qnhvw")
+skeleton = NodePath("../../../..")
+
+[node name="4" type="MeshInstance3D" parent="Body/main/bottomBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -1, 2.08165e-12)
+mesh = SubResource("BoxMesh_b51el")
+skeleton = NodePath("../../..")
+
+[node name="5" type="MeshInstance3D" parent="Body/main/bottomBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -3.125, 2.08165e-12)
+mesh = SubResource("BoxMesh_b51el")
+skeleton = NodePath("../../..")
+
+[node name="shoe1" type="Node3D" parent="Body"]
+
+[node name="front" type="Node3D" parent="Body/shoe1"]
+transform = Transform3D(0.26, 0, 0, 0, 0.26, 0, 0, 0, 0.13, -0.797342, 0.130366, 2.08165e-12)
+
+[node name="toe" type="MeshInstance3D" parent="Body/shoe1/front"]
+mesh = SubResource("BoxMesh_qnhvw")
+skeleton = NodePath("../../..")
+
+[node name="topOutside" type="MeshInstance3D" parent="Body/shoe1/front"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.251135, 0.760934, -1.3931e-11)
+mesh = SubResource("BoxMesh_ye2pw")
+skeleton = NodePath("../../..")
+
+[node name="back" type="Node3D" parent="Body/shoe1"]
+
+[node name="pokeyShoe" type="MeshInstance3D" parent="Body/shoe1/back"]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -0.330299, 0.192256, 2.70614e-13)
+mesh = SubResource("BoxMesh_ye2pw")
+skeleton = NodePath("../../..")
+
+[node name="heel" type="MeshInstance3D" parent="Body/shoe1/back"]
+transform = Transform3D(0.13, 0, 0, 0, 0.39, 0, 0, 0, 0.13, -0.457834, 0.195418, 2.70614e-13)
+mesh = SubResource("BoxMesh_ye2pw")
+skeleton = NodePath("../../..")
+
+[node name="feetBalls" type="Node3D" parent="Body/shoe1"]
+transform = Transform3D(0.13, -4.53423e-17, 4.53423e-17, 4.53423e-17, 0.13, -4.53423e-17, -4.53423e-17, 4.53423e-17, 0.13, -0.596, 0.194, -0.005)
+
+[node name="midBall" type="MeshInstance3D" parent="Body/shoe1/feetBalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("SphereMesh_17slx")
+skeleton = NodePath("../../..")
+
+[node name="midBallBack" type="MeshInstance3D" parent="Body/shoe1/feetBalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.923077)
+mesh = SubResource("SphereMesh_ya4xr")
+skeleton = NodePath("../../..")
+
+[node name="botBall" type="MeshInstance3D" parent="Body/shoe1/feetBalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0108767, -0.996251, 0.0384615)
+mesh = SubResource("SphereMesh_ann8d")
+skeleton = NodePath("../../..")
+
+[node name="topball" type="MeshInstance3D" parent="Body/shoe1/feetBalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0223951, 1.03237, 0.0384615)
+mesh = SubResource("SphereMesh_mm2ot")
+skeleton = NodePath("../../..")
+
+[node name="shoe2" type="Node3D" parent="Body"]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 0, 0, 0)
+
+[node name="front2" type="Node3D" parent="Body/shoe2"]
+transform = Transform3D(-0.26, 9.06846e-17, 1.1365e-08, 9.06846e-17, 0.26, -4.53423e-17, -2.27299e-08, -9.06846e-17, -0.13, 0.797342, 0.130366, 6.97038e-08)
+
+[node name="toe" type="MeshInstance3D" parent="Body/shoe2/front2"]
+transform = Transform3D(-1, 3.48787e-16, -4.37114e-08, 3.48787e-16, 1, -1.74393e-16, 1.74846e-07, -6.97574e-16, -1, 6.1334, 0, -5.36231e-07)
+mesh = SubResource("BoxMesh_qnhvw")
+skeleton = NodePath("../../..")
+
+[node name="topOutside" type="MeshInstance3D" parent="Body/shoe2/front2"]
+transform = Transform3D(-0.5, 1.74393e-16, -4.37114e-08, 1.74393e-16, 0.5, -1.74393e-16, 8.74228e-08, -3.48787e-16, -1, 5.88227, 0.760934, -4.92308e-07)
+mesh = SubResource("BoxMesh_ye2pw")
+skeleton = NodePath("../../..")
+
+[node name="back2" type="Node3D" parent="Body/shoe2"]
+transform = Transform3D(-1, 3.48787e-16, 8.74228e-08, 3.48787e-16, 1, -3.48787e-16, -8.74228e-08, -3.48787e-16, -1, 0, 0, 0)
+
+[node name="pokeyShoe" type="MeshInstance3D" parent="Body/shoe2/back2"]
+transform = Transform3D(-0.13, 4.53423e-17, -1.1365e-08, 4.53423e-17, 0.13, -4.53423e-17, 1.1365e-08, -4.53423e-17, -0.13, 0.330299, 0.192256, -2.88759e-08)
+mesh = SubResource("BoxMesh_ye2pw")
+skeleton = NodePath("../../..")
+
+[node name="heel" type="MeshInstance3D" parent="Body/shoe2/back2"]
+transform = Transform3D(-0.13, 1.36027e-16, -1.1365e-08, 4.53423e-17, 0.39, -4.53423e-17, 1.1365e-08, -1.36027e-16, -0.13, 0.457834, 0.195418, -4.00254e-08)
+mesh = SubResource("BoxMesh_ye2pw")
+skeleton = NodePath("../../..")
+
+[node name="feetBalls" type="Node3D" parent="Body/shoe2"]
+transform = Transform3D(0.13, -4.53423e-17, 4.53423e-17, 4.53423e-17, 0.13, -4.53423e-17, -4.53423e-17, 4.53423e-17, 0.13, -0.605388, 0.194, -0.005)
+
+[node name="midBall" type="MeshInstance3D" parent="Body/shoe2/feetBalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("SphereMesh_17slx")
+skeleton = NodePath("../../..")
+
+[node name="midBallBack" type="MeshInstance3D" parent="Body/shoe2/feetBalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.923077)
+mesh = SubResource("SphereMesh_ya4xr")
+skeleton = NodePath("../../..")
+
+[node name="botBall" type="MeshInstance3D" parent="Body/shoe2/feetBalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0108767, -0.996251, 0.0384615)
+mesh = SubResource("SphereMesh_ann8d")
+skeleton = NodePath("../../..")
+
+[node name="topball" type="MeshInstance3D" parent="Body/shoe2/feetBalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0223951, 1.03237, 0.0384615)
+mesh = SubResource("SphereMesh_mm2ot")
+skeleton = NodePath("../../..")
+
+[node name="PCJumpAnimationPlayer" type="AnimationPlayer" parent="Body"]
+root_node = NodePath("../PCHitAnimationPlayer")
+libraries = {
+"": SubResource("AnimationLibrary_8wer0")
+}
+
+[node name="PCIdleAnimationPlayer" type="AnimationPlayer" parent="Body"]
+root_node = NodePath("../PCAnimationPlayer")
+playback_default_blend_time = 0.5
+libraries = {
+"": SubResource("AnimationLibrary_u0kau")
+}
+
+[node name="PCHitAnimationPlayer" type="AnimationPlayer" parent="Body"]
+root_node = NodePath("../PCAnimationPlayer")
+libraries = {
+"": SubResource("AnimationLibrary_ua44m")
+}
+
+[node name="PCAnimationPlayer" type="AnimationPlayer" parent="Body"]
+playback_default_blend_time = 0.5
+libraries = {
+"": SubResource("AnimationLibrary_0ivvf")
+}
+
+[node name="BodyCollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.05643, 2.08165e-12)
+shape = SubResource("CapsuleShape3D_6bptw")
+
+[node name="Shoe1CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, 0.614193, 0.188227, 2.08165e-12)
+shape = SubResource("CapsuleShape3D_fgxyq")
+
+[node name="Shoe1CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -0.603285, 0.188227, 2.08165e-12)
+shape = SubResource("CapsuleShape3D_fgxyq")
+
+[node name="CameraOrbit" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
+script = ExtResource("1_2awhq")
+
+[node name="Camera3D" type="Camera3D" parent="CameraOrbit"]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, -1, 1, -5)
+current = true
+fov = 89.0
+
+[node name="WeaponHolder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58, 1, -0.025)
+visible = false
+
+[node name="Sword" parent="WeaponHolder" instance=ExtResource("1_w84h2")]
+transform = Transform3D(-1.23261e-09, 5.52437e-09, 0.15, 0.106066, 0.106066, 1.24759e-09, -0.106066, 0.106066, -6.67764e-09, 0, 0, 0)
+
+[node name="SwordAnimator" type="AnimationPlayer" parent="WeaponHolder"]
+libraries = {
+"": SubResource("AnimationLibrary_n2i5u")
+}
+
+[node name="AttackRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(14.2066, -2.18402e-16, 0.320927, 5.23181e-15, 1, -3.48787e-16, -4.81391, 4.42273e-16, 0.947104, -0.583149, 1, 2.08165e-12)
+target_position = Vector3(2.08165e-12, 2.08165e-12, 1.5)
+
+[node name="MX-01" type="Sprite3D" parent="."]
+transform = Transform3D(0.83, 0, 0, 0, 0.83, 0, 0, 0, 0.83, 0, 1.06147, 0)
+visible = false
+texture = ExtResource("6_m0c8h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_rayas")]
+script = ExtResource("5_6rsyh")

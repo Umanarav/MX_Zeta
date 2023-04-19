@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://j81nyerhia0m"
+path="res://.godot/imported/BushBerries_2.obj-214974ff7521ebd5ea0838327ef18da0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BushBerries_2.obj-214974ff7521ebd5ea0838327ef18da0.mesh"]
+
+source_file="res://OBJ/BushBerries_2.obj"
+dest_files=["res://.godot/imported/BushBerries_2.obj-214974ff7521ebd5ea0838327ef18da0.mesh", "res://.godot/imported/BushBerries_2.obj-214974ff7521ebd5ea0838327ef18da0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

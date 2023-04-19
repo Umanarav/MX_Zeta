@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c3gcaeqa2fip8"
+path="res://.godot/imported/Rock_Moss_3.obj-9577487e38d6a01a7340f1588d266a5c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Rock_Moss_3.obj-9577487e38d6a01a7340f1588d266a5c.mesh"]
+
+source_file="res://OBJ/Rock_Moss_3.obj"
+dest_files=["res://.godot/imported/Rock_Moss_3.obj-9577487e38d6a01a7340f1588d266a5c.mesh", "res://.godot/imported/Rock_Moss_3.obj-9577487e38d6a01a7340f1588d266a5c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

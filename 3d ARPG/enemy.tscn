@@ -1,0 +1,334 @@
+[gd_scene load_steps=30 format=3 uid="uid://vmu87hr2yfh1"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_qyr1t"]
+[ext_resource type="Material" uid="uid://d2cp6of4l4c8r" path="res://Models/Other.material" id="3_g6pnj"]
+[ext_resource type="ArrayMesh" uid="uid://c8qbwvrl57yu5" path="res://Models/Environment/mouth_OBJ.obj" id="3_lp0rr"]
+[ext_resource type="Animation" uid="uid://b1urnemqr7f0f" path="res://Hit.res" id="4_2hqri"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_020pp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygr22"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ycbxp"]
+material = ExtResource("3_g6pnj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7a4sv"]
+albedo_color = Color(0.976471, 0.976471, 0.976471, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_qb51i"]
+material = SubResource("StandardMaterial3D_7a4sv")
+radius = 0.25
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1u1qq"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_pwxgp"]
+material = SubResource("StandardMaterial3D_1u1qq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tdvxb"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_r0q0e"]
+material = SubResource("StandardMaterial3D_tdvxb")
+
+[sub_resource type="PrismMesh" id="PrismMesh_jdixh"]
+material = ExtResource("3_g6pnj")
+
+[sub_resource type="TorusMesh" id="TorusMesh_5nnpa"]
+material = ExtResource("3_g6pnj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdxhr"]
+resource_name = "Other"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.0764706
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j7g65"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h3dku"]
+
+[sub_resource type="Animation" id="Animation_pbcv0"]
+resource_name = "Die"
+
+[sub_resource type="Animation" id="Animation_nwf6b"]
+resource_name = "Hit_2"
+length = 0.433337
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(3.48787e-16, 1.5708, 3.48787e-16), Vector3(3.48787e-16, 1.5708, 2.39983), Vector3(3.48787e-16, 1.5708, 3.48787e-16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh/Hat:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.39211e-29, 0, -1.10923e-24), Vector3(3.48787e-16, 3.48787e-16, 19.1986)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mesh/Hat:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.233333, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(2.08165e-12, 1.3, 2.08165e-12), Vector3(0.76923, 2.72308, 2.08165e-12), Vector3(1.07692, 3.2923, 2.08165e-12), Vector3(-5, 5, 2.08165e-12)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mesh/Hat:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mesh/Hat:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.34, 0.34, 0.34), Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxdpd"]
+_data = {
+"Die": SubResource("Animation_pbcv0"),
+"Hit": ExtResource("4_2hqri"),
+"Hit_2": SubResource("Animation_nwf6b")
+}
+
+[sub_resource type="Animation" id="Animation_bus6s"]
+resource_name = "death"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(2.08165e-12, 1.25, 2.08165e-12), Vector3(2.08165e-12, 0.5, 2.08165e-12), Vector3(2.08165e-12, 0.5, 2.08165e-12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(3.48787e-16, 1.5708, 3.48787e-16), Vector3(1.5708, 1.5708, 3.48787e-16), Vector3(1.5708, 1.5708, 3.48787e-16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fuxwd"]
+_data = {
+"death": SubResource("Animation_bus6s")
+}
+
+[sub_resource type="Animation" id="Animation_nnraq"]
+resource_name = "attac"
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.433333, 0.533333, 0.633333, 0.833333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(3.48787e-16, 1.5708, 3.48787e-16), Vector3(3.48787e-16, 1.5708, -2.39983), Vector3(3.48787e-16, 1.5708, 3.48787e-16), Vector3(3.48787e-16, 1.5708, 0.0523599), Vector3(3.48787e-16, 1.5708, 0.139626), Vector3(3.48787e-16, 1.5708, 0.226893), Vector3(3.48787e-16, 1.5708, 0.366519)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Mesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.633333, 0.733333, 0.833333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(2.08165e-12, 1.25, 2.08165e-12), Vector3(2.08165e-12, 1.25, 2.08165e-12), Vector3(2.08165e-12, 1.5, 2.08165e-12), Vector3(2.08165e-12, 1.25, 2.08165e-12), Vector3(2.08165e-12, 1.5, 2.08165e-12), Vector3(2.08165e-12, 1.25, 2.08165e-12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wr3yb"]
+_data = {
+"Attack": SubResource("Animation_nnraq")
+}
+
+[sub_resource type="Animation" id="Animation_j6d5s"]
+resource_name = "Walk"
+length = 0.600003
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(3.48787e-16, 1.5708, 3.48787e-16), Vector3(0.0872665, 1.5708, 0.139626), Vector3(-0.0872665, 1.5708, 0.226893), Vector3(3.48787e-16, 1.5708, 0.366519), Vector3(0.0872665, 1.5708, 0.226893), Vector3(-0.0872665, 1.5708, 0.0523599), Vector3(-2.91283e-06, 1.5708, 3.48787e-16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6m0uf"]
+_data = {
+"Walk": SubResource("Animation_j6d5s")
+}
+
+[sub_resource type="Animation" id="Animation_kylpr"]
+resource_name = "idle"
+length = 0.333337
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(3.48787e-16, 1.5708, 3.48787e-16), Vector3(-0.0872665, 1.5708, 3.48787e-16), Vector3(0.0872665, 1.5708, 3.48787e-16), Vector3(3.48787e-16, 1.5708, 3.48787e-16), Vector3(0.0872665, 1.5708, 3.48787e-16), Vector3(-0.0872665, 1.5708, 3.48787e-16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hfoc7"]
+_data = {
+"idle": SubResource("Animation_kylpr")
+}
+
+[node name="Enemy" type="CharacterBody3D"]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("1_qyr1t")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.61999e-06, 3.48788e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48786e-16, -3.61999e-06, 2.08165e-12, 1.25, 2.08165e-12)
+mesh = SubResource("CapsuleMesh_020pp")
+surface_material_override/0 = SubResource("StandardMaterial3D_ygr22")
+
+[node name="Hat" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(0.34, 3.77137e-25, 0, -3.77137e-25, 0.34, -4.73317e-30, 0, 4.73317e-30, 0.34, 2.08165e-12, 1.3, 2.08165e-12)
+mesh = SubResource("CylinderMesh_ycbxp")
+
+[node name="Body" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1, 3.99853e-30, 0, -3.99853e-30, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="LeftEye" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(-1, -5.96097e-30, 8.74228e-08, 0, 1, 0, -8.74228e-08, -2.64698e-23, -1, 2.08121e-12, 0.55, 0.5)
+mesh = SubResource("SphereMesh_qb51i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh/LeftEye"]
+transform = Transform3D(-1.48619e-08, 1.18588e-16, 0.34, 1.18588e-16, 0.34, -1.18588e-16, -0.34, 1.18588e-16, -1.48619e-08, -0.13, 0, 0)
+mesh = SubResource("SphereMesh_pwxgp")
+
+[node name="RightEye" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(-1, -5.96097e-30, 8.74228e-08, 0, 1, 0, -8.74228e-08, -2.64698e-23, -1, 2.08121e-12, 0.55, -0.5)
+mesh = SubResource("SphereMesh_qb51i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh/RightEye"]
+transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.34, -0.13, 2.08165e-12, 2.08165e-12)
+mesh = SubResource("SphereMesh_r0q0e")
+
+[node name="ArmorL" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(-0.737277, 2.15156e-17, -0.67559, 3.48787e-16, 1, -3.48787e-16, 0.67559, -4.9279e-16, -0.737277, 2.08165e-12, 0, 2.08165e-12)
+mesh = SubResource("PrismMesh_jdixh")
+surface_material_override/0 = ExtResource("3_g6pnj")
+
+[node name="ArmorR" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(-0.737277, 4.9279e-16, 0.67559, 3.48787e-16, 1, -3.48787e-16, -0.67559, -2.15157e-17, -0.737277, 2.08165e-12, 0, 2.08165e-12)
+mesh = SubResource("PrismMesh_jdixh")
+
+[node name="HatRing" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(0.34, -2.02673e-30, -8.81082e-16, -3.77137e-25, 0.34, -2.80255e-30, 0, -8.99972e-24, 0.34, 2.08165e-12, 1, 2.08165e-12)
+mesh = SubResource("TorusMesh_5nnpa")
+
+[node name="MouthObj" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(-3.17572e-09, 0.00396819, 0.0498423, -7.52598e-09, -0.0498423, 0.00396819, 0.05, -7.2502e-09, 3.76299e-09, 0.727992, 0.545658, 1.99317e-08)
+material_override = SubResource("StandardMaterial3D_wdxhr")
+mesh = ExtResource("3_lp0rr")
+skeleton = NodePath("../..")
+
+[node name="BodyCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 1.25, 2.08165e-12)
+shape = SubResource("CapsuleShape3D_j7g65")
+
+[node name="HatCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1.48619e-08, 1.18588e-16, 0.34, 1.18588e-16, 0.34, -1.18588e-16, -0.34, 1.18588e-16, -1.48619e-08, 4.16375e-12, 2.55, 4.55837e-16)
+shape = SubResource("CylinderShape3D_h3dku")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Animations" type="Node" parent="."]
+
+[node name="Hit" type="AnimationPlayer" parent="Animations"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_fxdpd")
+}
+
+[node name="Die" type="AnimationPlayer" parent="Animations"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_fuxwd")
+}
+
+[node name="Attack" type="AnimationPlayer" parent="Animations"]
+autoplay = "Attack"
+libraries = {
+"": SubResource("AnimationLibrary_wr3yb")
+}
+
+[node name="Walk" type="AnimationPlayer" parent="Animations"]
+libraries = {
+"": SubResource("AnimationLibrary_6m0uf")
+}
+
+[node name="StandingClose" type="AnimationPlayer" parent="Animations"]
+libraries = {
+"": SubResource("AnimationLibrary_hfoc7")
+}
+
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

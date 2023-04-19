@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bbhm6o6mqvtdj"
+path="res://.godot/imported/CactusFlower_1.obj-eb15decc45c3c843c5f05c43e31c80c6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CactusFlower_1.obj-eb15decc45c3c843c5f05c43e31c80c6.mesh"]
+
+source_file="res://OBJ/CactusFlower_1.obj"
+dest_files=["res://.godot/imported/CactusFlower_1.obj-eb15decc45c3c843c5f05c43e31c80c6.mesh", "res://.godot/imported/CactusFlower_1.obj-eb15decc45c3c843c5f05c43e31c80c6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

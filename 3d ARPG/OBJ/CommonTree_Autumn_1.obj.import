@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cr3qkbq343sd7"
+path="res://.godot/imported/CommonTree_Autumn_1.obj-d889a26e2b7fb33de1427b063bce8013.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CommonTree_Autumn_1.obj-d889a26e2b7fb33de1427b063bce8013.mesh"]
+
+source_file="res://OBJ/CommonTree_Autumn_1.obj"
+dest_files=["res://.godot/imported/CommonTree_Autumn_1.obj-d889a26e2b7fb33de1427b063bce8013.mesh", "res://.godot/imported/CommonTree_Autumn_1.obj-d889a26e2b7fb33de1427b063bce8013.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

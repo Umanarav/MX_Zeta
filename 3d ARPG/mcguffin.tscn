@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5ekqh7k21wyy"]
+
+[ext_resource type="Script" path="res://mcguffin.gd" id="1_1gqj7"]
+[ext_resource type="PackedScene" uid="uid://coihxk4qglbao" path="res://golden_wheel.tscn" id="2_k7tib"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fgafg"]
+
+[node name="McGuffin" type="Area3D"]
+script = ExtResource("1_1gqj7")
+
+[node name="goldenWheel" parent="." instance=ExtResource("2_k7tib")]
+transform = Transform3D(-3.49691e-09, 0.08, 2.7903e-17, -0.08, -3.49691e-09, -2.7903e-17, -2.7903e-17, -2.7903e-17, 0.08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+shape = SubResource("SphereShape3D_fgafg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

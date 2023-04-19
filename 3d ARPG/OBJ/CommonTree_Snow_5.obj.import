@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwcu4n2w2dj4k"
+path="res://.godot/imported/CommonTree_Snow_5.obj-9bcfb714e9ff5d0a3e3d740275a29d82.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CommonTree_Snow_5.obj-9bcfb714e9ff5d0a3e3d740275a29d82.mesh"]
+
+source_file="res://OBJ/CommonTree_Snow_5.obj"
+dest_files=["res://.godot/imported/CommonTree_Snow_5.obj-9bcfb714e9ff5d0a3e3d740275a29d82.mesh", "res://.godot/imported/CommonTree_Snow_5.obj-9bcfb714e9ff5d0a3e3d740275a29d82.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

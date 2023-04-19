@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bmt3weko2livd"
+path="res://.godot/imported/CommonTree_Dead_5.obj-88c789a4d218898f7739284e18793756.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CommonTree_Dead_5.obj-88c789a4d218898f7739284e18793756.mesh"]
+
+source_file="res://OBJ/CommonTree_Dead_5.obj"
+dest_files=["res://.godot/imported/CommonTree_Dead_5.obj-88c789a4d218898f7739284e18793756.mesh", "res://.godot/imported/CommonTree_Dead_5.obj-88c789a4d218898f7739284e18793756.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

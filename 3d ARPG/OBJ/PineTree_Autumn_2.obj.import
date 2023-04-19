@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://mrbf1erglabl"
+path="res://.godot/imported/PineTree_Autumn_2.obj-fb6a1cf8d75a8893d561f2d9b8cd078b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PineTree_Autumn_2.obj-fb6a1cf8d75a8893d561f2d9b8cd078b.mesh"]
+
+source_file="res://OBJ/PineTree_Autumn_2.obj"
+dest_files=["res://.godot/imported/PineTree_Autumn_2.obj-fb6a1cf8d75a8893d561f2d9b8cd078b.mesh", "res://.godot/imported/PineTree_Autumn_2.obj-fb6a1cf8d75a8893d561f2d9b8cd078b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

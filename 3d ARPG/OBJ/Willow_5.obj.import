@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://vry36hc70bn4"
+path="res://.godot/imported/Willow_5.obj-347b1f63a68b8ad845743aac1bab6dda.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Willow_5.obj-347b1f63a68b8ad845743aac1bab6dda.mesh"]
+
+source_file="res://OBJ/Willow_5.obj"
+dest_files=["res://.godot/imported/Willow_5.obj-347b1f63a68b8ad845743aac1bab6dda.mesh", "res://.godot/imported/Willow_5.obj-347b1f63a68b8ad845743aac1bab6dda.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

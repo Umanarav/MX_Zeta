@@ -1,0 +1,596 @@
+[gd_scene load_steps=20 format=3 uid="uid://coihxk4qglbao"]
+
+[ext_resource type="Material" uid="uid://dbk2pn0sdux67" path="res://fractal_material.tres" id="1_fc4rb"]
+[ext_resource type="Script" path="res://golden_wheel.gd" id="1_kkjui"]
+[ext_resource type="Texture2D" uid="uid://bpm4bbcab3rdh" path="res://Models/art/symbol_center.jpg" id="1_qk54q"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xqaev"]
+material = ExtResource("1_fc4rb")
+
+[sub_resource type="Animation" id="Animation_lxkwr"]
+resource_name = "spin"
+length = 12.5667
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 12.5667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(3.48787e-16, 3.48787e-16, -6.28319)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1cg42"]
+_data = {
+"spin": SubResource("Animation_lxkwr")
+}
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i3a4f"]
+material = ExtResource("1_fc4rb")
+
+[sub_resource type="Animation" id="Animation_81qow"]
+resource_name = "spin"
+length = 7.76667
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.76667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.32349e-22, -1.32349e-22, -1.65809e-15), Vector3(3.48787e-16, 3.48787e-16, 6.28319)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qal72"]
+_data = {
+"spin": SubResource("Animation_81qow")
+}
+
+[sub_resource type="Animation" id="Animation_iwqiq"]
+resource_name = "spin"
+length = 4.8
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.07078e-22, -2.14157e-22, -2.33644e-15), Vector3(3.48787e-16, 3.48787e-16, -6.28319)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8jnt"]
+_data = {
+"spin": SubResource("Animation_iwqiq")
+}
+
+[sub_resource type="Animation" id="Animation_5qs8f"]
+resource_name = "spin"
+length = 2.96667
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.38585e-22, -1.38585e-22, -5.60655e-16), Vector3(3.48787e-16, 3.48787e-16, 6.28319)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ssv2j"]
+_data = {
+"spin": SubResource("Animation_5qs8f")
+}
+
+[sub_resource type="Animation" id="Animation_ro4dy"]
+resource_name = "spin"
+length = 1.83334
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.83333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.58819e-22, -1.58819e-22, -1.65809e-15), Vector3(3.48787e-16, 3.48787e-16, -6.28319)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qfpl5"]
+_data = {
+"spin": SubResource("Animation_ro4dy")
+}
+
+[sub_resource type="Animation" id="Animation_dxuhs"]
+resource_name = "spin"
+length = 3.40001
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.813e-22, -2.03962e-22, -5.2108e-15), Vector3(3.48787e-16, 3.48787e-16, 6.28319)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ukbe"]
+_data = {
+"spin": SubResource("Animation_dxuhs")
+}
+
+[sub_resource type="Animation" id="Animation_lndgh"]
+resource_name = "spin"
+length = 2.10001
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.85288e-22, -1.85288e-22, -1.65809e-15), Vector3(3.48787e-16, 3.48787e-16, -6.28319)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bd655"]
+_data = {
+"spin": SubResource("Animation_lndgh")
+}
+
+[node name="goldenWheel" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 1, 3.48787e-16, -1, -4.37114e-08, -3.48787e-16, -3.48787e-16, -3.48787e-16, 1, 0, 0, 0)
+script = ExtResource("1_kkjui")
+
+[node name="OuterWheel" type="Node3D" parent="."]
+transform = Transform3D(1, 1.74846e-07, 3.48787e-16, -1.74846e-07, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 0, 0)
+
+[node name="center point" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(0.999944, 0.0105416, 3.65717e-18, -0.0105416, 0.999945, -3.69624e-18, -3.69603e-18, 3.65749e-18, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point"]
+transform = Transform3D(-5.36087e-08, -1, 3.48787e-16, 1, -4.38971e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -3.02909e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="center point2" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(0.877381, 0.479795, 1.24578e-16, -0.479795, 0.877381, -2.10114e-16, -2.10114e-16, 1.24578e-16, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point2"]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -2.72843e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="center point3" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(0.496489, 0.868043, 1.27144e-16, -0.868043, 0.49649, -4.7838e-16, -4.7838e-16, 1.27144e-16, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point3"]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -2.72843e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="center point4" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(0.0954636, 0.995433, 3.17031e-17, -0.995433, 0.0954638, -6.62684e-16, -6.62684e-16, 3.1704e-17, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point4"]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -2.72843e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="center point5" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(-0.406784, 0.913524, -1.72043e-16, -0.913525, -0.406784, -8.09293e-16, -8.09293e-16, -1.72042e-16, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point5"]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -2.72843e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="center point6" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(-0.752392, 0.658716, -3.8146e-16, -0.658716, -0.752392, -8.40963e-16, -8.40963e-16, -3.81459e-16, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point6"]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -2.72843e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="center point7" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(-0.974527, 0.224271, -6.10467e-16, -0.224271, -0.974527, -7.66912e-16, -7.66912e-16, -6.10466e-16, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point7"]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -2.72843e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="center point8" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(-0.972366, -0.233462, -7.69364e-16, 0.233462, -0.972366, -6.06507e-16, -6.06507e-16, -7.69364e-16, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point8"]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -2.72843e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="center point9" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(-0.753254, -0.65773, -8.4092e-16, 0.657731, -0.753254, -3.82104e-16, -3.82104e-16, -8.40919e-16, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point9"]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -2.72843e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="center point10" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(-0.34597, -0.938246, -7.96704e-16, 0.938246, -0.34597, -1.42208e-16, -1.42209e-16, -7.96704e-16, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point10"]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -2.72843e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="center point11" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(0.0985556, -0.995132, -6.61501e-16, 0.995132, 0.0985551, 3.26773e-17, 3.26769e-17, -6.61501e-16, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point11"]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -2.72843e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="center point12" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(0.569911, -0.821707, -4.3661e-16, 0.821707, 0.569911, 1.36591e-16, 1.36591e-16, -4.3661e-16, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point12"]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -2.72843e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="center point13" type="Node3D" parent="OuterWheel"]
+transform = Transform3D(0.889839, -0.456276, -1.97566e-16, 0.456276, 0.889839, 1.2072e-16, 1.2072e-16, -1.97566e-16, 1, 0, 0, 0)
+
+[node name="capsule" type="MeshInstance3D" parent="OuterWheel/center point13"]
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -6.24192, -2.72843e-07, -2.1771e-15)
+mesh = SubResource("CapsuleMesh_xqaev")
+skeleton = NodePath("../../../Sprite3D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OuterWheel"]
+libraries = {
+"": SubResource("AnimationLibrary_1cg42")
+}
+
+[node name="OuterWheel-1" type="Node3D" parent="."]
+transform = Transform3D(1, 1.65809e-15, -1.32349e-22, -1.65809e-15, 1, -1.32349e-22, 1.32349e-22, 1.32349e-22, 1, 0, 0, 0)
+
+[node name="center" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(1, -9.47312e-16, 1.05879e-22, -1.65809e-15, 1, 5.29396e-23, -5.29396e-23, -5.29396e-23, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center2" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(0.885775, -0.464116, -2.01718e-16, 0.464116, 0.885775, 1.22037e-16, 1.22037e-16, -2.01718e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center2"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center3" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(0.571014, -0.82094, -4.35958e-16, 0.82094, 0.571015, 1.36708e-16, 1.36709e-16, -4.35958e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center3"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center4" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(0.10727, -0.99423, -6.58147e-16, 0.99423, 0.107271, 3.54017e-17, 3.54023e-17, -6.58147e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center4"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center5" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(-0.342348, -0.939573, -7.95904e-16, 0.939573, -0.342348, -1.40483e-16, -1.40482e-16, -7.95904e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center5"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center6" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(-0.757656, -0.652654, -8.40684e-16, 0.652654, -0.757656, -3.85411e-16, -3.8541e-16, -8.40685e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center6"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center7" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(-0.973303, -0.229523, -7.68316e-16, 0.229523, -0.973303, -6.08208e-16, -6.08208e-16, -7.68317e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center7"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center8" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(-0.973107, 0.230356, -6.07848e-16, -0.230356, -0.973107, -7.68539e-16, -7.68539e-16, -6.07849e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center8"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center9" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(-0.747902, 0.663809, -3.78117e-16, -0.663809, -0.747902, -8.41173e-16, -8.41173e-16, -3.78118e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center9"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center10" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(-0.390586, 0.920566, -1.63936e-16, -0.920567, -0.390586, -8.061e-16, -8.061e-16, -1.63937e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center10"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center11" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(0.0986774, 0.99512, 3.27154e-17, -0.99512, 0.0986773, -6.61454e-16, -6.61454e-16, 3.27148e-17, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center11"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center12" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(0.4987, 0.866775, 1.27473e-16, -0.866775, 0.4987, -4.77166e-16, -4.77167e-16, 1.27472e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center12"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center13" type="Node3D" parent="OuterWheel-1"]
+transform = Transform3D(0.863096, 0.50504, 1.28401e-16, -0.50504, 0.863096, -2.23901e-16, -2.23901e-16, 1.28401e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-1/center13"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OuterWheel-1"]
+libraries = {
+"": SubResource("AnimationLibrary_qal72")
+}
+
+[node name="OuterWheel-2" type="Node3D" parent="."]
+transform = Transform3D(-0.35447, -0.506236, 1.40706e-16, 0.506236, -0.35447, -1.40706e-16, 1.95966e-16, 3.4554e-17, 0.618, 0, 0, 0)
+
+[node name="center" type="Node3D" parent="OuterWheel-2"]
+transform = Transform3D(1, -9.47312e-16, 1.05879e-22, -1.65809e-15, 1, 5.29396e-23, -5.29396e-23, -5.29396e-23, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-2/center"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center2" type="Node3D" parent="OuterWheel-2"]
+transform = Transform3D(0.885775, -0.464116, -2.01718e-16, 0.464116, 0.885775, 1.22037e-16, 1.22037e-16, -2.01718e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-2/center2"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center4" type="Node3D" parent="OuterWheel-2"]
+transform = Transform3D(0.10727, -0.99423, -6.58147e-16, 0.99423, 0.107271, 3.54017e-17, 3.54023e-17, -6.58147e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-2/center4"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center6" type="Node3D" parent="OuterWheel-2"]
+transform = Transform3D(-0.757656, -0.652654, -8.40684e-16, 0.652654, -0.757656, -3.85411e-16, -3.8541e-16, -8.40685e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-2/center6"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center7" type="Node3D" parent="OuterWheel-2"]
+transform = Transform3D(-0.973303, -0.229523, -7.68316e-16, 0.229523, -0.973303, -6.08208e-16, -6.08208e-16, -7.68317e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-2/center7"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center9" type="Node3D" parent="OuterWheel-2"]
+transform = Transform3D(-0.747902, 0.663809, -3.78117e-16, -0.663809, -0.747902, -8.41173e-16, -8.41173e-16, -3.78118e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-2/center9"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center10" type="Node3D" parent="OuterWheel-2"]
+transform = Transform3D(-0.390586, 0.920566, -1.63936e-16, -0.920567, -0.390586, -8.061e-16, -8.061e-16, -1.63937e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-2/center10"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center12" type="Node3D" parent="OuterWheel-2"]
+transform = Transform3D(0.4987, 0.866775, 1.27473e-16, -0.866775, 0.4987, -4.77166e-16, -4.77167e-16, 1.27472e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-2/center12"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OuterWheel-2"]
+libraries = {
+"": SubResource("AnimationLibrary_g8jnt")
+}
+
+[node name="OuterWheel-3" type="Node3D" parent="."]
+transform = Transform3D(-0.112817, -0.364961, 3.96665e-17, 0.364961, -0.112817, -3.96666e-17, 4.96121e-17, 2.61823e-17, 0.382, 0, 0, 0)
+
+[node name="center3" type="Node3D" parent="OuterWheel-3"]
+transform = Transform3D(0.571014, -0.82094, -4.35958e-16, 0.82094, 0.571015, 1.36708e-16, 1.36709e-16, -4.35958e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-3/center3"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center5" type="Node3D" parent="OuterWheel-3"]
+transform = Transform3D(-0.342348, -0.939573, -7.95904e-16, 0.939573, -0.342348, -1.40483e-16, -1.40482e-16, -7.95904e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-3/center5"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center8" type="Node3D" parent="OuterWheel-3"]
+transform = Transform3D(-0.973107, 0.230356, -6.07848e-16, -0.230356, -0.973107, -7.68539e-16, -7.68539e-16, -6.07849e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-3/center8"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center11" type="Node3D" parent="OuterWheel-3"]
+transform = Transform3D(0.0986774, 0.99512, 3.27154e-17, -0.99512, 0.0986773, -6.61454e-16, -6.61454e-16, 3.27148e-17, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-3/center11"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center13" type="Node3D" parent="OuterWheel-3"]
+transform = Transform3D(0.863096, 0.50504, 1.28401e-16, -0.50504, 0.863096, -2.23901e-16, -2.23901e-16, 1.28401e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="OuterWheel-3/center13"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OuterWheel-3"]
+libraries = {
+"": SubResource("AnimationLibrary_ssv2j")
+}
+
+[node name="CenterWheel+2" type="Node3D" parent="."]
+transform = Transform3D(0.236, 3.91309e-16, -3.74813e-23, -3.91309e-16, 0.236, -3.74813e-23, 3.74813e-23, 3.74813e-23, 0.236, 0, 0, 0)
+
+[node name="center2" type="Node3D" parent="CenterWheel+2"]
+transform = Transform3D(0.885775, -0.464116, -2.01718e-16, 0.464116, 0.885775, 1.22037e-16, 1.22037e-16, -2.01718e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="CenterWheel+2/center2"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center7" type="Node3D" parent="CenterWheel+2"]
+transform = Transform3D(-0.973303, -0.229523, -7.68316e-16, 0.229523, -0.973303, -6.08208e-16, -6.08208e-16, -7.68317e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="CenterWheel+2/center7"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center10" type="Node3D" parent="CenterWheel+2"]
+transform = Transform3D(-0.390586, 0.920566, -1.63936e-16, -0.920567, -0.390586, -8.061e-16, -8.061e-16, -1.63937e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="CenterWheel+2/center10"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterWheel+2"]
+libraries = {
+"": SubResource("AnimationLibrary_qfpl5")
+}
+
+[node name="CenterWheel+1" type="Node3D" parent="."]
+transform = Transform3D(0.146, 7.60777e-16, -2.97785e-23, -7.60777e-16, 0.146, -2.64698e-23, 2.97785e-23, 2.64698e-23, 0.146, 0, 0, 0)
+
+[node name="center4" type="Node3D" parent="CenterWheel+1"]
+transform = Transform3D(0.10727, -0.99423, -6.58147e-16, 0.99423, 0.107271, 3.54017e-17, 3.54023e-17, -6.58147e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="CenterWheel+1/center4"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="center12" type="Node3D" parent="CenterWheel+1"]
+transform = Transform3D(0.4987, 0.866775, 1.27473e-16, -0.866775, 0.4987, -4.77166e-16, -4.77167e-16, 1.27472e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="CenterWheel+1/center12"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterWheel+1"]
+libraries = {
+"": SubResource("AnimationLibrary_0ukbe")
+}
+
+[node name="CenterWheel" type="Node3D" parent="."]
+transform = Transform3D(0.0889948, -0.0134138, 3.06434e-17, 0.0134138, 0.0889948, -3.06434e-17, -2.5734e-17, 3.48683e-17, 0.09, 0, 0, 0)
+
+[node name="center9" type="Node3D" parent="CenterWheel"]
+transform = Transform3D(-0.747902, 0.663809, -3.78117e-16, -0.663809, -0.747902, -8.41173e-16, -8.41173e-16, -3.78118e-16, 1, 0, 0, 0)
+
+[node name="limb" type="MeshInstance3D" parent="CenterWheel/center9"]
+transform = Transform3D(-2.70136e-08, -0.618, 2.1555e-16, 0.618, -2.70136e-08, -2.1555e-16, 2.1555e-16, 2.1555e-16, 0.618, -3.82491, -1.67192e-07, -1.33408e-15)
+mesh = SubResource("CapsuleMesh_i3a4f")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterWheel"]
+libraries = {
+"": SubResource("AnimationLibrary_bd655")
+}
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+visible = false
+texture = ExtResource("1_qk54q")

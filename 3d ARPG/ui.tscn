@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1vbyjper7af3"]
+
+[ext_resource type="Texture2D" uid="uid://b5i8uorxvdln8" path="res://UI/UI_WhiteSquare.png" id="1_ed6ti"]
+[ext_resource type="FontFile" uid="uid://cg4lekr1hvwkt" path="res://Font/Ubuntu-Regular.ttf" id="2_o7h7k"]
+
+[sub_resource type="Animation" id="Animation_qj2ov"]
+resource_name = "cooldownTimer"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponCooldown:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4y03g"]
+_data = {
+"cooldownTimer": SubResource("Animation_qj2ov")
+}
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 14.575
+anchor_bottom = 14.575
+offset_left = 19.0
+offset_top = -3.05176e-05
+offset_right = 215.0
+offset_bottom = 40.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_ed6ti")
+texture_progress = ExtResource("1_ed6ti")
+tint_under = Color(0.235294, 0.235294, 0.235294, 1)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.905882, 0, 0, 1)
+
+[node name="GoldText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 13.475
+anchor_bottom = 13.475
+offset_left = 28.0
+offset_top = -1.52588e-05
+offset_right = 200.0
+offset_bottom = 37.0
+theme_override_fonts/font = ExtResource("2_o7h7k")
+theme_override_font_sizes/font_size = 30
+text = "Gold: 500"
+
+[node name="WeaponCooldown" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 14.7
+anchor_bottom = 14.7
+offset_left = 474.0
+offset_top = -3.05176e-05
+offset_right = 669.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Weapon Cooldown"
+show_percentage = false
+
+[node name="Animation" type="Node" parent="."]
+
+[node name="CooldownDisplayAnimator" type="AnimationPlayer" parent="Animation"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_4y03g")
+}
+
+[node name="QuestTitle" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 106.0
+offset_bottom = 30.0
+text = "QuestTitlePH
+"
+
+[node name="QuestDescription" type="Label" parent="QuestTitle"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 22.0
+offset_right = 124.0
+offset_bottom = 48.0
+text = "DescriptionPH
+"
+
+[node name="QuestTracker" type="Label" parent="QuestTitle/QuestDescription"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 21.0
+offset_right = 116.0
+offset_bottom = 47.0
+text = "QuestTracker"

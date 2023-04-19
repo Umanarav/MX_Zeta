@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dp60mcra0p8wi"
+path="res://.godot/imported/Willow_Dead_3.obj-6c414f73468a7399410a8d2024b8461f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Willow_Dead_3.obj-6c414f73468a7399410a8d2024b8461f.mesh"]
+
+source_file="res://OBJ/Willow_Dead_3.obj"
+dest_files=["res://.godot/imported/Willow_Dead_3.obj-6c414f73468a7399410a8d2024b8461f.mesh", "res://.godot/imported/Willow_Dead_3.obj-6c414f73468a7399410a8d2024b8461f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

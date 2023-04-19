@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5gqdqwmeskgl"
+path="res://.godot/imported/Cactus_2.obj-8ce27b83015aaecf66c10aa909cc2b92.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cactus_2.obj-8ce27b83015aaecf66c10aa909cc2b92.mesh"]
+
+source_file="res://OBJ/Cactus_2.obj"
+dest_files=["res://.godot/imported/Cactus_2.obj-8ce27b83015aaecf66c10aa909cc2b92.mesh", "res://.godot/imported/Cactus_2.obj-8ce27b83015aaecf66c10aa909cc2b92.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,30 @@
+[gd_resource type="FontFile" format=3 uid="uid://cp61v4jbu0ss7"]
+
+[resource]
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/233/0 = Vector2(0, 0)
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/233/0 = Vector2(0, 0)
+cache/0/233/0/ascent = 0.0
+cache/0/233/0/descent = 0.0
+cache/0/233/0/underline_position = 0.0
+cache/0/233/0/underline_thickness = 0.0
+cache/0/233/0/scale = 1.0
+cache/0/233/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/233/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/233/0/kerning_overrides/233/0 = Vector2(0, 0)

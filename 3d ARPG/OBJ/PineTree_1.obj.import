@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dyskeav7wbj8"
+path="res://.godot/imported/PineTree_1.obj-441225c6090d3ed8ee24af4496e6f026.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PineTree_1.obj-441225c6090d3ed8ee24af4496e6f026.mesh"]
+
+source_file="res://OBJ/PineTree_1.obj"
+dest_files=["res://.godot/imported/PineTree_1.obj-441225c6090d3ed8ee24af4496e6f026.mesh", "res://.godot/imported/PineTree_1.obj-441225c6090d3ed8ee24af4496e6f026.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

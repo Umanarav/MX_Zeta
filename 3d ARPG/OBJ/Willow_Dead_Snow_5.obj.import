@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dlcig22e2pr5p"
+path="res://.godot/imported/Willow_Dead_Snow_5.obj-f50a21660e1b1e0b998e13e7e259c0c0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Willow_Dead_Snow_5.obj-f50a21660e1b1e0b998e13e7e259c0c0.mesh"]
+
+source_file="res://OBJ/Willow_Dead_Snow_5.obj"
+dest_files=["res://.godot/imported/Willow_Dead_Snow_5.obj-f50a21660e1b1e0b998e13e7e259c0c0.mesh", "res://.godot/imported/Willow_Dead_Snow_5.obj-f50a21660e1b1e0b998e13e7e259c0c0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
