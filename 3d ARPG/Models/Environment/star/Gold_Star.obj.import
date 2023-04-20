@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://t3p6uo7d15pq"
+path="res://.godot/imported/Gold_Star.obj-e191eb904c9cc28d11ba8d5bb10d9faf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Gold_Star.obj-e191eb904c9cc28d11ba8d5bb10d9faf.mesh"]
+
+source_file="res://Models/Environment/star/Gold_Star.obj"
+dest_files=["res://.godot/imported/Gold_Star.obj-e191eb904c9cc28d11ba8d5bb10d9faf.mesh", "res://.godot/imported/Gold_Star.obj-e191eb904c9cc28d11ba8d5bb10d9faf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

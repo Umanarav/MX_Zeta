@@ -1,9 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://vmu87hr2yfh1"]
+[gd_scene load_steps=37 format=3 uid="uid://vmu87hr2yfh1"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_qyr1t"]
+[ext_resource type="Texture2D" uid="uid://5wsmqw5knvyh" path="res://Models/Environment/star/Texture_gold.jpg" id="3_50jia"]
 [ext_resource type="Material" uid="uid://d2cp6of4l4c8r" path="res://Models/Other.material" id="3_g6pnj"]
 [ext_resource type="ArrayMesh" uid="uid://c8qbwvrl57yu5" path="res://Models/Environment/mouth_OBJ.obj" id="3_lp0rr"]
 [ext_resource type="Animation" uid="uid://b1urnemqr7f0f" path="res://Hit.res" id="4_2hqri"]
+[ext_resource type="ArrayMesh" uid="uid://t3p6uo7d15pq" path="res://Models/Environment/star/Gold_Star.obj" id="4_c7xix"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_020pp"]
 
@@ -39,6 +41,9 @@ material = ExtResource("3_g6pnj")
 [sub_resource type="TorusMesh" id="TorusMesh_5nnpa"]
 material = ExtResource("3_g6pnj")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_616s5"]
+albedo_texture = ExtResource("3_50jia")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdxhr"]
 resource_name = "Other"
 cull_mode = 2
@@ -49,13 +54,70 @@ roughness = 0.0764706
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_h3dku"]
 
+[sub_resource type="Animation" id="Animation_pyoxs"]
+resource_name = "respawn"
+step = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-3.72529e-09, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.08165e-12, 1.25, 2.08165e-12), Vector3(2.08165e-12, 1.25, 2.08165e-12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Mesh/Hat:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01, 1.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Mesh/MouthObj:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-3.72529e-09, 1.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Mesh:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.02),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_axnuv"]
+_data = {
+"respawn": SubResource("Animation_pyoxs")
+}
+
 [sub_resource type="Animation" id="Animation_pbcv0"]
 resource_name = "Die"
 
 [sub_resource type="Animation" id="Animation_nwf6b"]
 resource_name = "Hit_2"
 length = 0.433337
-step = 0.0333333
+step = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -117,11 +179,179 @@ tracks/4/keys = {
 "values": [Vector3(0.34, 0.34, 0.34), Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)]
 }
 
+[sub_resource type="Animation" id="Animation_xpov5"]
+resource_name = "stunned"
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh/HatRing:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.64698e-23, 0, -1.10923e-24), Vector3(3.48787e-16, 1.5708, 3.48787e-16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh/HatRing/stunnedStars/GoldStar1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-3.48786e-16, -1.5708, 3.48788e-16), Vector3(3.48787e-16, 3.14159, 3.48787e-16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mesh/HatRing/stunnedStars/GoldStar1:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-3.72529e-09, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.021, 0.021, 0.021), Vector3(0.013, 0.013, 0.013), Vector3(0.021, 0.021, 0.021)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mesh/HatRing/stunnedStars/GoldStar2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-3.48786e-16, -1.5708, 3.48788e-16), Vector3(3.48787e-16, 3.14159, 3.48787e-16)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mesh/HatRing/stunnedStars/GoldStar3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-3.48786e-16, -1.5708, 3.48788e-16), Vector3(3.48787e-16, 3.14159, 3.48787e-16)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Mesh/HatRing/stunnedStars/GoldStar4:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-3.48786e-16, -1.5708, 3.48788e-16), Vector3(3.48787e-16, 3.14159, 3.48787e-16)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Mesh/HatRing/stunnedStars/GoldStar2:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.021, 0.021, 0.021), Vector3(0.013, 0.013, 0.013), Vector3(0.021, 0.021, 0.021)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Mesh/HatRing/stunnedStars/GoldStar3:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.021, 0.021, 0.021), Vector3(0.034, 0.034, 0.034), Vector3(0.021, 0.021, 0.021)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Mesh/HatRing/stunnedStars/GoldStar4:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.021, 0.021, 0.021), Vector3(0.034, 0.034, 0.034), Vector3(0.021, 0.021, 0.021)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Mesh:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(3.48787e-16, 1.5708, 3.48787e-16), Vector3(-0.0174533, 1.5708, 3.48787e-16), Vector3(0.0174533, 1.5708, 3.48787e-16), Vector3(3.48787e-16, 1.5708, 3.48787e-16)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Mesh/HatRing/stunnedStars:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_vmihy"]
+resource_name = "stunrecovery"
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(3.48787e-16, 1.5708, 3.48787e-16), Vector3(0.0523599, 1.5708, 3.48787e-16), Vector3(-0.0872665, 1.5708, 3.48787e-16), Vector3(3.48787e-16, 1.5708, 3.48787e-16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(2.08165e-12, 1.25, 2.08165e-12), Vector3(2.08165e-12, 1.34, 2.08165e-12), Vector3(2.08165e-12, 1.21, 2.08165e-12), Vector3(2.08165e-12, 1.25, 2.08165e-12)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fxdpd"]
 _data = {
 "Die": SubResource("Animation_pbcv0"),
 "Hit": ExtResource("4_2hqri"),
-"Hit_2": SubResource("Animation_nwf6b")
+"Hit_2": SubResource("Animation_nwf6b"),
+"stunned": SubResource("Animation_xpov5"),
+"stunrecovery": SubResource("Animation_vmihy")
 }
 
 [sub_resource type="Animation" id="Animation_bus6s"]
@@ -134,10 +364,10 @@ tracks/0/path = NodePath("Mesh:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.0001, 0.2, 0.99, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(2.08165e-12, 1.25, 2.08165e-12), Vector3(2.08165e-12, 0.5, 2.08165e-12), Vector3(2.08165e-12, 0.5, 2.08165e-12)]
+"values": [Vector3(2.08165e-12, 1.25, 2.08165e-12), Vector3(2.08165e-12, 1.25, 2.08165e-12), Vector3(2.08165e-12, 1.11, 2.08165e-12), Vector3(2.08165e-12, -2, 2.08165e-12), Vector3(2.08165e-12, 1.25, 2.08165e-12)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -146,10 +376,22 @@ tracks/1/path = NodePath("Mesh:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.99, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(3.48787e-16, 1.5708, 3.48787e-16), Vector3(1.5708, 1.5708, 3.48787e-16), Vector3(1.5708, 1.5708, 3.48787e-16)]
+"values": [Vector3(3.48787e-16, 1.5708, 3.48787e-16), Vector3(1.5708, 1.5708, 3.48787e-16), Vector3(1.5708, 1.5708, 3.48787e-16), Vector3(3.48787e-16, 1.5708, 3.48787e-16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mesh:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.04, 0.98),
+"transitions": PackedFloat32Array(1, 3.36358),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fuxwd"]
@@ -246,7 +488,7 @@ mesh = SubResource("CapsuleMesh_020pp")
 surface_material_override/0 = SubResource("StandardMaterial3D_ygr22")
 
 [node name="Hat" type="MeshInstance3D" parent="Mesh"]
-transform = Transform3D(0.34, 3.77137e-25, 0, -3.77137e-25, 0.34, -4.73317e-30, 0, 4.73317e-30, 0.34, 2.08165e-12, 1.3, 2.08165e-12)
+transform = Transform3D(0.34, 3.77138e-25, 0, -3.77138e-25, 0.34, -4.73317e-30, 0, 4.73317e-30, 0.34, 2.08165e-12, 1.3, 2.08165e-12)
 mesh = SubResource("CylinderMesh_ycbxp")
 
 [node name="Body" type="MeshInstance3D" parent="Mesh"]
@@ -278,8 +520,64 @@ transform = Transform3D(-0.737277, 4.9279e-16, 0.67559, 3.48787e-16, 1, -3.48787
 mesh = SubResource("PrismMesh_jdixh")
 
 [node name="HatRing" type="MeshInstance3D" parent="Mesh"]
-transform = Transform3D(0.34, -2.02673e-30, -8.81082e-16, -3.77137e-25, 0.34, -2.80255e-30, 0, -8.99972e-24, 0.34, 2.08165e-12, 1, 2.08165e-12)
+transform = Transform3D(0.34, 3.77137e-25, 0, -3.77137e-25, 0.34, 8.99972e-24, 0, -8.99972e-24, 0.34, 2.08165e-12, 1, 2.08165e-12)
 mesh = SubResource("TorusMesh_5nnpa")
+
+[node name="stunnedStars" type="Node3D" parent="Mesh/HatRing"]
+transform = Transform3D(1, 1.58125e-23, -9.66294e-14, -1.58125e-23, 1, -6.50752e-29, 9.66294e-14, 6.50752e-29, 1, 0, 0, 0)
+visible = false
+
+[node name="GoldStar1" type="MeshInstance3D" parent="Mesh/HatRing/stunnedStars"]
+transform = Transform3D(-7.60198e-08, 7.32453e-18, -0.021, 7.32455e-18, 0.021, 7.3245e-18, 0.021, -7.32453e-18, -7.60198e-08, 1.5, 0.197, -0.000405136)
+material_override = SubResource("StandardMaterial3D_616s5")
+mesh = ExtResource("4_c7xix")
+skeleton = NodePath("../../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Mesh/HatRing/stunnedStars/GoldStar1"]
+transform = Transform3D(1, 7.25738e-23, 1.54143e-44, -7.25738e-23, 1, 3.21033e-22, 8.40779e-45, -3.21033e-22, 1, -1.58629, 15.0374, 0)
+light_color = Color(1, 0.956863, 0.407843, 1)
+light_energy = 0.001
+light_size = 1.1
+omni_range = 0.350322
+
+[node name="GoldStar2" type="MeshInstance3D" parent="Mesh/HatRing/stunnedStars"]
+transform = Transform3D(-7.60198e-08, 7.32453e-18, -0.021, 7.32455e-18, 0.021, 7.3245e-18, 0.021, -7.32453e-18, -7.60198e-08, -1.5, 0.197, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_616s5")
+mesh = ExtResource("4_c7xix")
+skeleton = NodePath("../../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Mesh/HatRing/stunnedStars/GoldStar2"]
+transform = Transform3D(1, 7.25738e-23, 1.54143e-44, -7.25738e-23, 1, 3.21033e-22, 8.40779e-45, -3.21033e-22, 1, -1.58629, 15.0374, 0)
+light_color = Color(1, 0.956863, 0.407843, 1)
+light_energy = 0.001
+light_size = 1.1
+omni_range = 0.350322
+
+[node name="GoldStar3" type="MeshInstance3D" parent="Mesh/HatRing/stunnedStars"]
+transform = Transform3D(-7.60198e-08, 7.32453e-18, -0.021, 7.32455e-18, 0.021, 7.3245e-18, 0.021, -7.32453e-18, -7.60198e-08, 2.08165e-12, 0.197, 1.5)
+material_override = SubResource("StandardMaterial3D_616s5")
+mesh = ExtResource("4_c7xix")
+skeleton = NodePath("../../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Mesh/HatRing/stunnedStars/GoldStar3"]
+transform = Transform3D(1, 7.25738e-23, 1.54143e-44, -7.25738e-23, 1, 3.21033e-22, 8.40779e-45, -3.21033e-22, 1, -1.58629, 15.0374, 0)
+light_color = Color(1, 0.956863, 0.407843, 1)
+light_energy = 0.001
+light_size = 1.1
+omni_range = 0.350322
+
+[node name="GoldStar4" type="MeshInstance3D" parent="Mesh/HatRing/stunnedStars"]
+transform = Transform3D(-7.60198e-08, 7.32453e-18, -0.021, 7.32455e-18, 0.021, 7.3245e-18, 0.021, -7.32453e-18, -7.60198e-08, 2.08165e-12, 0.197, -1.5)
+material_override = SubResource("StandardMaterial3D_616s5")
+mesh = ExtResource("4_c7xix")
+skeleton = NodePath("../../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Mesh/HatRing/stunnedStars/GoldStar4"]
+transform = Transform3D(1, 7.25738e-23, 1.54143e-44, -7.25738e-23, 1, 3.21033e-22, 8.40779e-45, -3.21033e-22, 1, -1.58629, 15.0374, 0)
+light_color = Color(1, 0.956863, 0.407843, 1)
+light_energy = 0.001
+light_size = 1.1
+omni_range = 0.350322
 
 [node name="MouthObj" type="MeshInstance3D" parent="Mesh"]
 transform = Transform3D(-3.17572e-09, 0.00396819, 0.0498423, -7.52598e-09, -0.0498423, 0.00396819, 0.05, -7.2502e-09, 3.76299e-09, 0.727992, 0.545658, 1.99317e-08)
@@ -298,6 +596,12 @@ shape = SubResource("CylinderShape3D_h3dku")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Animations" type="Node" parent="."]
+
+[node name="Respawn" type="AnimationPlayer" parent="Animations"]
+root_node = NodePath("../Hit")
+libraries = {
+"": SubResource("AnimationLibrary_axnuv")
+}
 
 [node name="Hit" type="AnimationPlayer" parent="Animations"]
 root_node = NodePath("../..")
@@ -327,8 +631,19 @@ libraries = {
 "": SubResource("AnimationLibrary_hfoc7")
 }
 
+[node name="Stunned" type="AnimationPlayer" parent="Animations"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_fxdpd")
+}
+
 [node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 3.0
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

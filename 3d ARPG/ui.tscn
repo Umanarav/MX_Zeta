@@ -1,7 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1vbyjper7af3"]
+[gd_scene load_steps=7 format=3 uid="uid://c1vbyjper7af3"]
 
 [ext_resource type="Texture2D" uid="uid://b5i8uorxvdln8" path="res://UI/UI_WhiteSquare.png" id="1_ed6ti"]
 [ext_resource type="FontFile" uid="uid://cg4lekr1hvwkt" path="res://Font/Ubuntu-Regular.ttf" id="2_o7h7k"]
+
+[sub_resource type="Animation" id="Animation_kbv4t"]
+resource_name = "ability1CooldownTimerAnimation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.08165e-12, 100.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qd6pl"]
+_data = {
+"ability1CooldownTimerAnimation": SubResource("Animation_kbv4t")
+}
 
 [sub_resource type="Animation" id="Animation_qj2ov"]
 resource_name = "cooldownTimer"
@@ -72,6 +92,25 @@ grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Weapon Cooldown"
 show_percentage = false
+
+[node name="Ability1Cooldown" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 464.0
+offset_right = 133.0
+offset_bottom = 491.0
+show_percentage = false
+
+[node name="Ability1CooldownDisplayAnimator" type="AnimationPlayer" parent="Ability1Cooldown"]
+libraries = {
+"": SubResource("AnimationLibrary_qd6pl")
+}
+
+[node name="Ability1SecondsRemainingLabel" type="Label" parent="Ability1Cooldown"]
+layout_mode = 0
+offset_top = -30.0
+offset_right = 40.0
+offset_bottom = -4.0
 
 [node name="Animation" type="Node" parent="."]
 
