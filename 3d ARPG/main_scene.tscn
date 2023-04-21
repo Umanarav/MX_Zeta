@@ -796,7 +796,7 @@ skeleton = NodePath("../../..")
 shape = SubResource("ConcavePolygonShape3D_0knc0")
 
 [node name="Floor" type="MeshInstance3D" parent="Models"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -15, 2.08165e-12, 15)
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -15.4766, 0.180799, 15.1322)
 mesh = ExtResource("1_uhnqg")
 skeleton = NodePath("../..")
 

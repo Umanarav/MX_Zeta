@@ -1,10 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1vbyjper7af3"]
+[gd_scene load_steps=15 format=3 uid="uid://c1vbyjper7af3"]
 
 [ext_resource type="Texture2D" uid="uid://b5i8uorxvdln8" path="res://UI/UI_WhiteSquare.png" id="1_ed6ti"]
 [ext_resource type="FontFile" uid="uid://cg4lekr1hvwkt" path="res://Font/Ubuntu-Regular.ttf" id="2_o7h7k"]
+[ext_resource type="Texture2D" uid="uid://drrhowv7vnofu" path="res://Models/art/melee_attack_cooldown.png" id="3_hv1cc"]
+[ext_resource type="Texture2D" uid="uid://cd8wgpmcvxyed" path="res://Models/art/ability_1_cooldown_icon.png" id="3_lmpvn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2b8fj"]
+blend_mode = 4
+
+[sub_resource type="QuadMesh" id="QuadMesh_vwrrw"]
 
 [sub_resource type="Animation" id="Animation_kbv4t"]
 resource_name = "ability1CooldownTimerAnimation"
+step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -17,11 +25,102 @@ tracks/0/keys = {
 "update": 0,
 "values": [2.08165e-12, 100.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("whiteBar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(22, 40), Vector2(22, 35.5), Vector2(22, 34.5), Vector2(22, 32.5), Vector2(22, 31.5), Vector2(22, 30.5), Vector2(22, 29.5), Vector2(22, 28.5), Vector2(22, 26.5), Vector2(22, 25.5), Vector2(22, 24.5), Vector2(22, 23.5), Vector2(22, 22.5), Vector2(22, 20.5), Vector2(22, 19.5), Vector2(22, 18.5), Vector2(22, 17.5), Vector2(22, 16.5), Vector2(22, 14.5), Vector2(22, 13.5), Vector2(22, 12.5), Vector2(22, 11.5), Vector2(22, 10.5), Vector2(22, 8.5), Vector2(22, 7.5), Vector2(22, 6.5), Vector2(22, 5.5), Vector2(22, 4.5), Vector2(22, 2.753), Vector2(22, 2.08165e-12)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("whiteBar:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("whiteBar:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.266667, 0.433333, 0.466667, 0.7, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(30.701, 1.21), Vector2(41, 1.34), Vector2(40, 1.34), Vector2(39, 1.34), Vector2(38, 1.34), Vector2(36, 1.34), Vector2(35, 1.34), Vector2(33.2, 1.34), Vector2(33, 1.33), Vector2(33, 1.34), Vector2(32.5, 1.34), Vector2(13, 0.512)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ability1CooldownIcon:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.833333, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.215686), Color(0.968627, 0.682353, 0.458824, 0.686275), Color(0, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.486275, 0.0392157, 1), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/path = NodePath("../WeaponCooldown:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(0.968627, 0.682353, 0.458824, 0.686275), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = false
+tracks/7/path = NodePath("../WeaponCooldown/MeleeAttackCooldownIcon:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.833333, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.564706), Color(1, 1, 1, 0.913725), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qd6pl"]
 _data = {
 "ability1CooldownTimerAnimation": SubResource("Animation_kbv4t")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_3j2ad"]
+font_size = 21
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.08165e-12, 2.08165e-12)
 
 [sub_resource type="Animation" id="Animation_qj2ov"]
 resource_name = "cooldownTimer"
@@ -38,11 +137,191 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 100.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeaponCooldown/MeleeAttackCooldownIcon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeaponCooldown:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WeaponCooldown/whiteBar:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.2, 0.233333, 0.266667, 0.3, 0.4, 0.433333, 0.5, 0.533333, 0.566667, 0.6, 0.7, 0.733333, 0.766667, 0.8, 0.9, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(22, 40), Vector2(22, 35.5), Vector2(22, 34.5), Vector2(22, 32.5), Vector2(22, 29.5), Vector2(22, 28.5), Vector2(22, 26.5), Vector2(22, 25.5), Vector2(22, 22.5), Vector2(22, 20.5), Vector2(22, 18.5), Vector2(22, 17.5), Vector2(22, 16.5), Vector2(22, 14.5), Vector2(22, 11.5), Vector2(22, 10.5), Vector2(22, 8.5), Vector2(22, 7.5), Vector2(22, 4.5), Vector2(22, 2.5), Vector2(22, 2.08165e-12)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WeaponCooldown/whiteBar:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(34, 0.512), Vector2(34, 0.512), Vector2(2.08165e-12, 2.08165e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_nwy2p"]
+resource_name = "disabled"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponCooldown:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeaponCooldown/MeleeAttackCooldownIcon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeaponCooldown:value")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.08165e-12, 100.0]
+}
+
+[sub_resource type="Animation" id="Animation_okt3j"]
+resource_name = "cooldownTimer_disabled"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponCooldown:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeaponCooldown/MeleeAttackCooldownIcon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeaponCooldown:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WeaponCooldown/whiteBar:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.2, 0.233333, 0.266667, 0.3, 0.4, 0.433333, 0.5, 0.533333, 0.566667, 0.6, 0.7, 0.733333, 0.766667, 0.8, 0.9, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(22, 40), Vector2(22, 35.5), Vector2(22, 34.5), Vector2(22, 32.5), Vector2(22, 29.5), Vector2(22, 28.5), Vector2(22, 26.5), Vector2(22, 25.5), Vector2(22, 22.5), Vector2(22, 20.5), Vector2(22, 18.5), Vector2(22, 17.5), Vector2(22, 16.5), Vector2(22, 14.5), Vector2(22, 11.5), Vector2(22, 10.5), Vector2(22, 8.5), Vector2(22, 7.5), Vector2(22, 4.5), Vector2(22, 2.5), Vector2(22, 2.08165e-12)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WeaponCooldown/whiteBar:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(34, 0.512), Vector2(34, 0.512), Vector2(2.08165e-12, 2.08165e-12)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WeaponCooldown:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/path = NodePath("rayGunHeatSink:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4y03g"]
 _data = {
-"cooldownTimer": SubResource("Animation_qj2ov")
+"cooldownTimer": SubResource("Animation_qj2ov"),
+"cooldownTimer_disabled": SubResource("Animation_okt3j"),
+"disabled": SubResource("Animation_nwy2p")
 }
+
+[sub_resource type="BoxMesh" id="BoxMesh_7nenh"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -84,22 +363,45 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 14.7
 anchor_bottom = 14.7
-offset_left = 474.0
-offset_top = -3.05176e-05
-offset_right = 669.0
-offset_bottom = 27.0
+offset_left = 917.0
+offset_top = -25.0
+offset_right = 961.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Weapon Cooldown"
+value = 100.0
+fill_mode = 3
 show_percentage = false
+
+[node name="MeleeAttackCooldownIcon" type="Sprite2D" parent="WeaponCooldown"]
+position = Vector2(22, 20)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("3_hv1cc")
+
+[node name="whiteBar" type="MeshInstance2D" parent="WeaponCooldown"]
+modulate = Color(1, 1, 0.796078, 1)
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_2b8fj")
+position = Vector2(22, 2.08165e-12)
+scale = Vector2(1e-05, 1e-05)
+mesh = SubResource("QuadMesh_vwrrw")
 
 [node name="Ability1Cooldown" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 464.0
-offset_right = 133.0
-offset_bottom = 491.0
+offset_left = 1005.0
+offset_top = 563.0
+offset_right = 1049.0
+offset_bottom = 603.0
+value = 100.0
+fill_mode = 3
 show_percentage = false
+
+[node name="Ability1CooldownIcon" type="Sprite2D" parent="Ability1Cooldown"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(23, 20.0001)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("3_lmpvn")
 
 [node name="Ability1CooldownDisplayAnimator" type="AnimationPlayer" parent="Ability1Cooldown"]
 libraries = {
@@ -108,9 +410,21 @@ libraries = {
 
 [node name="Ability1SecondsRemainingLabel" type="Label" parent="Ability1Cooldown"]
 layout_mode = 0
-offset_top = -30.0
-offset_right = 40.0
-offset_bottom = -4.0
+offset_left = 16.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 38.0
+text = "0"
+label_settings = SubResource("LabelSettings_3j2ad")
+
+[node name="whiteBar" type="MeshInstance2D" parent="Ability1Cooldown"]
+visible = false
+modulate = Color(1, 1, 0.796078, 1)
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_2b8fj")
+position = Vector2(22, 2.08165e-12)
+scale = Vector2(13, 0.512)
+mesh = SubResource("QuadMesh_vwrrw")
 
 [node name="Animation" type="Node" parent="."]
 
@@ -146,3 +460,30 @@ offset_top = 21.0
 offset_right = 116.0
 offset_bottom = 47.0
 text = "QuestTracker"
+
+[node name="Crosshair" type="Node2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="CHR2" type="MeshInstance2D" parent="Crosshair"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(8, 1.888)
+mesh = SubResource("BoxMesh_7nenh")
+
+[node name="CHR4" type="MeshInstance2D" parent="Crosshair"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2.08165e-12, 2.08165e-12)
+rotation = 1.5708
+scale = Vector2(8, 1.888)
+mesh = SubResource("BoxMesh_7nenh")
+
+[node name="rayGunHeatSink" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 749.0
+offset_top = 564.0
+offset_right = 872.0
+offset_bottom = 603.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 21

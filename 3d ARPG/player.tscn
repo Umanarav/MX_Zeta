@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bxp2dofewepxm"]
+[gd_scene load_steps=54 format=3 uid="uid://bxp2dofewepxm"]
 
 [ext_resource type="Script" path="res://CameraOrbit.gd" id="1_2awhq"]
 [ext_resource type="Script" path="res://player.gd" id="1_ekj0j"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://c1vbyjper7af3" path="res://ui.tscn" id="4_rayas"]
 [ext_resource type="Material" uid="uid://cdjvonbh4mb08" path="res://MX-02-Black.tres" id="5_3dj5t"]
 [ext_resource type="Script" path="res://ui.gd" id="5_6rsyh"]
-[ext_resource type="Texture2D" uid="uid://b7adi7xu2pg5x" path="res://Models/art/Mx-01.png" id="6_m0c8h"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_wii2b"]
 
@@ -252,6 +251,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0.13, 0.13, 0.13), Vector3(0.14, 0.14, 0.14), Vector3(0.13, 0.13, 0.13)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../CameraOrbit/RobotPalCenter/MeshInstance3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.01247, 1, 2.08165e-12), Vector3(-1.012, 0.96, 2.08165e-12), Vector3(-1.01247, 1, 2.08165e-12)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u0kau"]
 _data = {
@@ -379,6 +390,135 @@ height = 2.10325
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fgxyq"]
 radius = 0.189324
 height = 0.695712
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ku8t"]
+albedo_color = Color(1, 0, 0, 1)
+metallic_specular = 0.41
+emission_enabled = true
+emission = Color(0.490196, 0.423529, 0.47451, 1)
+emission_energy_multiplier = 0.13
+proximity_fade_distance = 90.04
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8kk0a"]
+material = SubResource("StandardMaterial3D_2ku8t")
+radius = 0.13
+radial_segments = 5
+rings = 10
+
+[sub_resource type="Animation" id="Animation_i3jbh"]
+resource_name = "shoot_ray"
+length = 0.333336
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.2, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0, 1.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../GunRayCast3D/RayBeamFromCamera:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.2, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0, 1.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../GunRayCast3D/RayBeamFromCamera:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.21, 0.21, 0.21), Vector3(0.55, 0.21, 0.55), Vector3(0.21, 0.21, 0.21)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../GunRayCast3D/RayBeamFromCamera:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../GunRayCast3D/RayBeamFromCamera:cast_shadow")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 0, 0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../../RobotPalCenter/MeshInstance3D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.21, 0.21, 0.21), Vector3(0.26, 0.26, 0.26), Vector3(0.25, 0.25, 0.25), Vector3(0.21, 0.21, 0.21)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../../RobotPalCenter/MeshInstance3D:transparency")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.89, 0.0, 0.55, 0.89]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ucg2m"]
+_data = {
+"shoot_ray": SubResource("Animation_i3jbh")
+}
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6g01w"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_0koav"]
+material = ExtResource("2_awe22")
+inner_radius = 1.254
+outer_radius = 1.005
+rings = 55
+ring_segments = 5
 
 [sub_resource type="Animation" id="Animation_0tsmc"]
 resource_name = "Attack"
@@ -708,7 +848,7 @@ _data = {
 script = ExtResource("1_ekj0j")
 
 [node name="Body" type="Node3D" parent="."]
-transform = Transform3D(1, -3.48787e-16, 1.74846e-07, 3.48787e-16, 1, -3.48787e-16, -1.74846e-07, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="CapsuleShape" type="MeshInstance3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
@@ -717,10 +857,10 @@ mesh = SubResource("CapsuleMesh_wii2b")
 skeleton = NodePath("../..")
 
 [node name="main" type="Node3D" parent="Body"]
-transform = Transform3D(0.52, -4.53423e-17, 4.53423e-17, 1.81369e-16, 0.13, -4.53423e-17, -1.81369e-16, 4.53423e-17, 0.13, 0.00197044, 0.688523, 9.95031e-13)
+transform = Transform3D(0.52, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0.00197044, 0.688523, 9.95031e-13)
 
 [node name="head" type="Node3D" parent="Body/main"]
-transform = Transform3D(0.5, -1.2396e-06, -2.40841e-07, 3.099e-07, 2, 1.5232e-07, 6.02102e-08, -1.5232e-07, 2, -0.00158755, 8.55614, 7.45931e-16)
+transform = Transform3D(0.5, -1.2396e-06, -2.4084e-07, 3.099e-07, 2, 1.5232e-07, 6.021e-08, -1.5232e-07, 2, -0.00158755, 8.55614, 7.45931e-16)
 
 [node name="dome" type="MeshInstance3D" parent="Body/main/head"]
 transform = Transform3D(1, -1.49721e-14, -3.53023e-15, -1.2185e-14, 1, 1.3616e-15, 1.52997e-14, 9.63286e-15, 1, 0, 0, 0)
@@ -753,7 +893,7 @@ mesh = SubResource("BoxMesh_qnhvw")
 skeleton = NodePath("../../..")
 
 [node name="leftArm" type="Node3D" parent="Body/main"]
-transform = Transform3D(0.25, -3.48787e-16, 3.48787e-16, 8.71968e-17, 1, -3.48787e-16, -8.71968e-17, 3.48787e-16, 1, -1.01607, 6.45713, -2.08165e-12)
+transform = Transform3D(0.25, -3.48787e-16, 3.48787e-16, 8.71967e-17, 1, -3.48787e-16, -8.71967e-17, 3.48787e-16, 1, -1.01607, 6.45713, -2.08165e-12)
 
 [node name="armSeg2" type="MeshInstance3D" parent="Body/main/leftArm"]
 transform = Transform3D(1, -3.83532e-23, -9.44119e-24, -9.44119e-24, 1, 9.44119e-24, -3.83532e-23, 3.83532e-23, 1, -1.50688, 1.53362, 2.08128e-12)
@@ -870,7 +1010,6 @@ skeleton = NodePath("../../..")
 [node name="bottomBody" type="Node3D" parent="Body/main"]
 
 [node name="1" type="MeshInstance3D" parent="Body/main/bottomBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_qixhb")
 skeleton = NodePath("../../..")
 
@@ -1054,6 +1193,39 @@ transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e
 current = true
 fov = 89.0
 
+[node name="SpecialWeapons" type="Node3D" parent="CameraOrbit/Camera3D"]
+transform = Transform3D(-1, 3.48787e-16, 8.74228e-08, 3.48787e-16, 1, -3.48787e-16, -8.74228e-08, -3.48787e-16, -1, -1, -0.94357, -5)
+
+[node name="RayBeam" type="MeshInstance3D" parent="CameraOrbit/Camera3D/SpecialWeapons"]
+transform = Transform3D(0.998118, 0.306636, -2.49856e-09, -0.00220447, 0.179392, -0.999354, -0.0612876, 4.98736, 0.035946, 0.242257, 0.249271, 5.04633)
+visible = false
+transparency = 1.0
+mesh = SubResource("CapsuleMesh_8kk0a")
+skeleton = NodePath("../../../..")
+
+[node name="RayBeamAnimator" type="AnimationPlayer" parent="CameraOrbit/Camera3D/SpecialWeapons/RayBeam"]
+libraries = {
+"": SubResource("AnimationLibrary_ucg2m")
+}
+
+[node name="GunRayCast3D" type="RayCast3D" parent="CameraOrbit/Camera3D/SpecialWeapons"]
+transform = Transform3D(-1, 1.74846e-05, -3.82137e-15, -1.5246e-23, -8.74228e-06, -1, -8.74228e-08, -200, 4.37114e-08, -1, 0.94357, -5)
+
+[node name="RayBeamFromCamera" type="MeshInstance3D" parent="CameraOrbit/Camera3D/SpecialWeapons/GunRayCast3D"]
+transform = Transform3D(0.21, 1.3154e-17, -2.37393e-22, -1.3154e-17, 0.21, 4.26326e-14, 2.37393e-22, -4.26326e-14, 0.21, -4.64916e-06, -0.236105, 2.26498e-06)
+visible = false
+transparency = 1.0
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_6g01w")
+
+[node name="RobotPalCenter" type="Node3D" parent="CameraOrbit"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraOrbit/RobotPalCenter"]
+transform = Transform3D(0.21, -1.39949e-31, 6.11735e-39, 0, -9.17939e-09, -0.21, 1.39949e-31, 0.21, -9.17939e-09, -1.01247, 1, 2.08165e-12)
+transparency = 0.89
+mesh = SubResource("TorusMesh_0koav")
+skeleton = NodePath("../..")
+
 [node name="WeaponHolder" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58, 1, -0.025)
 visible = false
@@ -1069,11 +1241,6 @@ libraries = {
 [node name="AttackRayCast" type="RayCast3D" parent="."]
 transform = Transform3D(14.2066, -2.18402e-16, 0.320926, 5.23181e-15, 1, -3.48788e-16, -4.81391, 4.42273e-16, 0.947104, -0.583149, 1, 2.08165e-12)
 target_position = Vector3(2.08165e-12, 2.08165e-12, 1.5)
-
-[node name="MX-01" type="Sprite3D" parent="."]
-transform = Transform3D(0.83, 0, 0, 0, 0.83, 0, 0, 0, 0.83, 0, 1.06147, 0)
-visible = false
-texture = ExtResource("6_m0c8h")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

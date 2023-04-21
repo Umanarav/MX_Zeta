@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7utd45q3xo84"]
+
+[ext_resource type="Material" uid="uid://pew41shwxyg6" path="res://lightning_material.tres" id="1_ef238"]
+
+[sub_resource type="Gradient" id="Gradient_mn78j"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_we38w"]
+gradient = SubResource("Gradient_mn78j")
+
+[sub_resource type="Gradient" id="Gradient_n0wpl"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7fymm"]
+gradient = SubResource("Gradient_n0wpl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_10vdj"]
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_box_extents = Vector3(0.1, 0.1, 0.1)
+direction = Vector3(2.08165e-12, 1, 2.08165e-12)
+spread = 0.0
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+angle_min = 137.5
+angle_max = 137.5
+color_ramp = SubResource("GradientTexture1D_7fymm")
+color_initial_ramp = SubResource("GradientTexture1D_we38w")
+
+[sub_resource type="SphereMesh" id="SphereMesh_5f460"]
+material = ExtResource("1_ef238")
+radius = 2.583
+height = 0.828
+rings = 55
+
+[node name="LightningParticleParent" type="Node3D"]
+
+[node name="LightningGPUParticles3D" type="GPUParticles3D" parent="."]
+transparency = 0.4
+speed_scale = 64.0
+visibility_aabb = AABB(-3, -3, -3, 3, 3, 3)
+process_material = SubResource("ParticleProcessMaterial_10vdj")
+draw_pass_1 = SubResource("SphereMesh_5f460")

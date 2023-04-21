@@ -10,6 +10,7 @@ var blade2Cast
 var blade3Cast
 var blade4Cast
 var blade5Cast
+var gunRayCast3D
 
 #abilities
 var ability1Activated = false
@@ -24,6 +25,8 @@ var player_ability_1_cooldown_animation_player
 #attack anim
 var swordAnimator
 var swordAnim
+var rayBeamAnimator
+var rayAnim
 #when player is hit
 var hitAnimator
 var hitAnim 
@@ -31,9 +34,13 @@ var hitAnim
 #cooldowns
 var cooldownDisplayAnimator
 var cooldownDisplay
+var cooldownDisplayDisabled
 var ability1CooldownDisplayAnimator
 var ability1CooldownDisplay
 var ability1SecondsRemainingLabel
+var rayGunHeatSinkLevel : float = 0.0
+var rayGunHeatSinkProgressBar
+var rayGunOverHeated = false
 
 #jump anim
 var jumpAnimator
@@ -54,8 +61,11 @@ var gold : int = 0
 var McGuffins: int = 4
 var attackRate : float = 1
 var ability1Rate : float = 5
+var shootRate : float = 0.34
 var lastAttackTime : int = 0
 var lastAbility1Time : int = 0
+var lastShootTime : int = 0
+
 #physics
 var moveSpeed : float = 8.0
 var jumpForce : float = 10.0
@@ -69,10 +79,15 @@ func _ready ():
 	attackCast = get_node("AttackRayCast")
 	swordAnimator = get_node("./WeaponHolder/SwordAnimator")
 	swordAnim = swordAnimator.get_animation("Attack")
+	#RayBeam
+	rayBeamAnimator = get_node("./CameraOrbit/Camera3D/SpecialWeapons/RayBeam/RayBeamAnimator")
+	rayAnim = rayBeamAnimator.get_animation("shoot_ray")
+	rayGunHeatSinkProgressBar = get_node("./CanvasLayer/UI/rayGunHeatSink")
 	
 	#cooldownAnimation
 	cooldownDisplayAnimator = get_node("./CanvasLayer/UI/Animation/CooldownDisplayAnimator")
 	cooldownDisplay = cooldownDisplayAnimator.get_animation("cooldownTimer")
+	cooldownDisplayDisabled = cooldownDisplayAnimator.get_animation("cooldownTimer_disabled")
 	ability1SecondsRemainingLabel = get_node("./CanvasLayer/UI/Ability1Cooldown/Ability1SecondsRemainingLabel")
 	#beyblade
 	blade1Cast = get_node("BeyBlade/BeyBladeAttackRays/Blade1RayCast")
@@ -80,6 +95,8 @@ func _ready ():
 	blade3Cast = get_node("BeyBlade/BeyBladeAttackRays/Blade3RayCast")
 	blade4Cast = get_node("BeyBlade/BeyBladeAttackRays/Blade4RayCast")
 	blade5Cast = get_node("BeyBlade/BeyBladeAttackRays/Blade5RayCast")
+	#gun
+	gunRayCast3D = get_node("CameraOrbit/Camera3D/SpecialWeapons/GunRayCast3D")
 	#ability 1 Animation
 	player_ability_1_animation_player = get_node("BeyBlade/BeyBladeAnimationPlayer")
 	player_ability_1_cooldown_animation_player = get_node("./CanvasLayer/UI/Ability1Cooldown/Ability1CooldownDisplayAnimator")
@@ -178,12 +195,38 @@ func _physics_process (delta):
 		if blade5Cast.is_colliding():
 			if blade5Cast.get_collider().has_method("take_damage"):
 				blade5Cast.get_collider().take_damage(damage)
-				print('enemyBeyBladed 5')				
+				print('enemyBeyBladed 5')
+	#rayGunProgress
+	if rayGunHeatSinkLevel > 0 :
+		if rayGunOverHeated == true:
+			rayGunHeatSinkLevel -= 0.5
+		else:
+			rayGunHeatSinkLevel -= 0.125
+		print(rayGunHeatSinkLevel)
+		rayGunHeatSinkProgressBar.value = rayGunHeatSinkLevel
+	elif rayGunHeatSinkLevel <= 0:
+		#gun returns to normal
+		rayGunOverHeated = false
+		rayGunHeatSinkLevel = 0
+		#reset color
+		rayGunHeatSinkProgressBar.modulate = Color(1, 1, 1, 1)
+	
+	#color Indicator when building heat
+	if rayGunOverHeated == false:
+		if rayGunHeatSinkLevel < 33:
+			rayGunHeatSinkProgressBar.modulate = Color(1, 1, 1, 1)
+		elif rayGunHeatSinkLevel > 33 && rayGunHeatSinkProgressBar.modulate != Color(1, 0.48627451062202, 0.03921568766236, 1) && rayGunHeatSinkLevel < 66:
+			rayGunHeatSinkProgressBar.modulate = Color(1, 0.48627451062202, 0.03921568766236, 1)
+		elif rayGunHeatSinkLevel > 66 && rayGunHeatSinkProgressBar.modulate != Color(0.76862746477127, 0.1176470592618, 0.22745098173618) && rayGunHeatSinkLevel < 99:
+			rayGunHeatSinkProgressBar.modulate = Color(0.76862746477127, 0.1176470592618, 0.22745098173618)
+
 
 func _process (delta):
 	# attack input
 	if Input.is_action_pressed("attack") && ability1Activated != true:
 		try_attack()
+	if Input.is_action_pressed("shoot") && ability1Activated != true:
+		try_shoot()
 	if Input.is_action_pressed("ability_1"):
 		try_ability_1 ()
 	ability1SecondsRemainingLabel.text = str(round(ability1Timer.get_time_left()))
@@ -200,6 +243,8 @@ func try_attack ():
 	swordAnimator.stop()
 	swordAnimator.play("Attack")
 	cooldownDisplayAnimator.stop()
+	cooldownDisplayAnimator.seek(0)
+	cooldownDisplayAnimator.speed_scale = 1
 	cooldownDisplayAnimator.play("cooldownTimer")
 	# is the ray cast colliding with an enemy?
 	if attackCast.is_colliding():
@@ -207,17 +252,39 @@ func try_attack ():
 			attackCast.get_collider().take_damage(damage)
 			print('enemyCollided')
 
+# called when we press the attack button
+func try_shoot ():
+	if Time.get_ticks_msec() - lastShootTime < shootRate * 1000 || rayGunOverHeated == true:
+		return
+	# set the last attack time to now
+	lastShootTime = Time.get_ticks_msec()
+	# play the animation
+	rayBeamAnimator.stop()
+	rayBeamAnimator.play("shoot_ray")
+	rayGunHeatSinkLevel += 10
+	# is the ray cast colliding with an enemy?
+	if gunRayCast3D.is_colliding():
+		if gunRayCast3D.get_collider().has_method("take_damage"):
+			gunRayCast3D.get_collider().take_damage(damage)
+			print('enemyCollided')
+	if rayGunHeatSinkLevel >= 100:
+		rayGunOverHeated = true
+		rayGunHeatSinkProgressBar.modulate = Color(255, 0, 0, 1)
+		return
+
 # called when we press the ability 1 button
 func try_ability_1 ():
 	if Time.get_ticks_msec() - lastAbility1Time < ability1Rate * 1000:
-		
 		return
 	# set the last attack time to now
 	lastAbility1Time = Time.get_ticks_msec()
 	ability1Timer.start()
 	ability1Activated = true
 	player_ability_1_animation_player.play("full_spin")
+	player_ability_1_cooldown_animation_player.stop()
 	player_ability_1_cooldown_animation_player.play("ability1CooldownTimerAnimation")
+	cooldownDisplayAnimator.speed_scale = 1 / ability1Rate
+	cooldownDisplayAnimator.play("cooldownTimer_disabled")
 	player_ability_1_cooldown_animation_player.speed_scale = 1 / ability1Rate
 	
 	# play the animation

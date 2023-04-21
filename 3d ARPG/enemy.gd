@@ -31,11 +31,15 @@ var knockbackPending = false
 var knockbackValue = 0
 var stunnedStars
 
+#collision
 var bodyCollision
-
 var hatEquipped = true
 var hatCollision
 
+#objects
+var mouthObj
+
+#animation
 var enemy_attack_animation_player 
 var enemy_hit_animation_player
 var enemy_walk_animation_player
@@ -60,6 +64,7 @@ func _ready ():
 	hatCollision = get_node("HatCollision")
 	bodyCollision = get_node("BodyCollision")
 	stunnedStars = get_node("Mesh/HatRing/stunnedStars")
+	mouthObj = get_node("Mesh/MouthObj")
 	
 	# set the timer wait time
 	timer.wait_time = attackRate
@@ -112,7 +117,6 @@ func _physics_process (delta):
 
 # called when the player deals damage to us
 func take_damage (damageToTake):
-	enemy_hit_animation_player.stop(true)
 	enemy_attack_animation_player.stop(true)
 	if knockbackPending == false:
 		knockbackPending = true
@@ -124,6 +128,7 @@ func take_damage (damageToTake):
 		enemy_hit_animation_player.play("Hit_2")
 		hatEquipped = false
 		hatCollision.disabled = true
+		mouthObj.visible = false
 	elif damaged == false && dying != true:
 		enemy_hit_animation_player.play("Hit")
 		damaged = true
@@ -154,6 +159,7 @@ func respawn():
 	curHp = maxHp
 	bodyCollision.disabled = false
 	hatCollision.disabled = false
+	mouthObj.visible = true
 	damaged = false
 	dying = false
 	knockbackPending = false
